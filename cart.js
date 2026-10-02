@@ -1,4 +1,11 @@
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+// =====================================================
+// CART
+// =====================================================
+
+let cart =
+    JSON.parse(localStorage.getItem("cart")) || [];
+
 
 
 // =====================================================
@@ -7,37 +14,53 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function addToCart(name, price) {
 
-    const existingItem = cart.find(function (item) {
-        return item.name === name;
-    });
+    const existingItem =
+        cart.find(function (item) {
+
+            return item.name === name;
+
+        });
+
 
     if (existingItem) {
 
         existingItem.quantity =
             (existingItem.quantity || 1) + 1;
 
-    } else {
+    }
+
+    else {
 
         cart.push({
+
             name: name,
+
             price: price,
+
             quantity: 1
+
         });
 
     }
+
 
     localStorage.setItem(
         "cart",
         JSON.stringify(cart)
     );
 
+
     updateCartCount();
+
     displayCart();
+
 
     showNotification(
         name + " added to cart ✓"
     );
+
 }
+
 
 
 // =====================================================
@@ -49,20 +72,27 @@ function updateCartCount() {
     const cartCount =
         document.getElementById("cart-count");
 
+
     if (cartCount) {
 
         let count = 0;
 
+
         cart.forEach(function (item) {
 
-            count += item.quantity || 1;
+            count +=
+                item.quantity || 1;
 
         });
 
-        cartCount.textContent = count;
+
+        cartCount.textContent =
+            count;
 
     }
+
 }
+
 
 
 // =====================================================
@@ -72,34 +102,50 @@ function updateCartCount() {
 function showNotification(message) {
 
     const oldNotification =
-        document.querySelector(".cart-notification");
+        document.querySelector(
+            ".cart-notification"
+        );
+
 
     if (oldNotification) {
+
         oldNotification.remove();
+
     }
+
 
     const notification =
         document.createElement("div");
 
+
     notification.className =
         "cart-notification";
 
+
     notification.textContent =
         message;
+
 
     document.body.appendChild(
         notification
     );
 
+
     setTimeout(function () {
 
-        notification.classList.add("show");
+        notification.classList.add(
+            "show"
+        );
 
     }, 10);
 
+
     setTimeout(function () {
 
-        notification.classList.remove("show");
+        notification.classList.remove(
+            "show"
+        );
+
 
         setTimeout(function () {
 
@@ -107,8 +153,11 @@ function showNotification(message) {
 
         }, 300);
 
+
     }, 2000);
+
 }
+
 
 
 // =====================================================
@@ -118,70 +167,110 @@ function showNotification(message) {
 function displayCart() {
 
     const cartItems =
-        document.getElementById("cart-items");
+        document.getElementById(
+            "cart-items"
+        );
+
 
     const totalElement =
-        document.getElementById("cart-total");
+        document.getElementById(
+            "cart-total"
+        );
+
 
     if (!cartItems || !totalElement) {
+
         return;
+
     }
 
+
     cartItems.innerHTML = "";
+
 
     let total = 0;
 
 
-    // Empty cart
+
+    // =========================
+    // EMPTY CART
+    // =========================
+
     if (cart.length === 0) {
 
         cartItems.innerHTML = `
+
             <p class="empty-cart">
+
                 Your cart is empty 🛒
+
             </p>
+
         `;
+
 
         totalElement.textContent =
             "0 L.L";
 
+
         return;
+
     }
 
 
-    // Display products
+
+    // =========================
+    // DISPLAY PRODUCTS
+    // =========================
+
     cart.forEach(function (item, index) {
 
         const quantity =
             item.quantity || 1;
 
+
         const itemTotal =
             item.price * quantity;
 
-        total += itemTotal;
+
+        total +=
+            itemTotal;
+
 
 
         const itemDiv =
             document.createElement("div");
 
+
         itemDiv.className =
             "cart-item";
+
 
         itemDiv.innerHTML = `
 
             <span>
+
                 ${quantity} × ${item.name}
+
             </span>
 
+
             <span>
+
                 ${itemTotal.toLocaleString()} L.L
+
             </span>
+
 
             <button
                 onclick="removeFromCart(${index})">
+
                 Remove
+
             </button>
 
         `;
+
 
         cartItems.appendChild(
             itemDiv
@@ -190,11 +279,17 @@ function displayCart() {
     });
 
 
-    // Display total
+
+    // =========================
+    // DISPLAY TOTAL
+    // =========================
+
     totalElement.textContent =
         total.toLocaleString() +
         " L.L";
+
 }
+
 
 
 // =====================================================
@@ -207,20 +302,27 @@ function removeFromCart(index) {
 
         cart[index].quantity -= 1;
 
-    } else {
+    }
+
+    else {
 
         cart.splice(index, 1);
 
     }
+
 
     localStorage.setItem(
         "cart",
         JSON.stringify(cart)
     );
 
+
     updateCartCount();
+
     displayCart();
+
 }
+
 
 
 // =====================================================
@@ -229,27 +331,41 @@ function removeFromCart(index) {
 
 function showCustomerForm() {
 
+    // Check if cart is empty
+
     if (cart.length === 0) {
 
-        alert("Your cart is empty!");
+        alert(
+            "Your cart is empty!"
+        );
 
         return;
+
     }
 
 
     const form =
-        document.getElementById("customer-form");
+        document.getElementById(
+            "customer-form"
+        );
+
 
     if (form) {
 
-        form.style.display = "block";
+        form.style.display =
+            "block";
+
 
         form.scrollIntoView({
+
             behavior: "smooth"
+
         });
 
     }
+
 }
+
 
 
 // =====================================================
@@ -259,74 +375,161 @@ function showCustomerForm() {
 function placeOrder() {
 
     const nameInput =
-        document.getElementById("customer-name");
+        document.getElementById(
+            "customer-name"
+        );
+
 
     const addressInput =
-        document.getElementById("customer-address");
+        document.getElementById(
+            "customer-address"
+        );
 
 
-    // Make sure the inputs exist
-    if (!nameInput || !addressInput) {
+    const notesInput =
+        document.getElementById(
+            "customer-notes"
+        );
 
-        alert("Customer form is missing.");
+
+
+    // =========================
+    // CHECK INPUTS
+    // =========================
+
+    if (
+        !nameInput ||
+        !addressInput ||
+        !notesInput
+    ) {
+
+        alert(
+            "Customer form is missing."
+        );
 
         return;
+
     }
 
 
+
+    // =========================
+    // GET VALUES
+    // =========================
+
     const name =
         nameInput.value.trim();
+
 
     const address =
         addressInput.value.trim();
 
 
-    // Check cart
+    const notes =
+        notesInput.value.trim();
+
+
+
+    // =========================
+    // CHECK CART
+    // =========================
+
     if (cart.length === 0) {
 
-        alert("Your cart is empty!");
+        alert(
+            "Your cart is empty!"
+        );
 
         return;
+
     }
 
 
-    // Check customer information
-    if (name === "" || address === "") {
+
+    // =========================
+    // NAME + ADDRESS REQUIRED
+    // NOTES OPTIONAL
+    // =========================
+
+    if (
+        name === "" ||
+        address === ""
+    ) {
 
         alert(
             "Please enter your name and address."
         );
 
         return;
+
     }
 
+
+
+    // =========================
+    // TOTAL
+    // =========================
 
     let total = 0;
 
 
-    // Start WhatsApp message
+
+    // =========================
+    // WHATSAPP MESSAGE
+    // =========================
+
     let message =
         "🥐 New Order - Alkamal Croissant\n\n";
 
 
-    // Customer information
+
+    // CUSTOMER INFORMATION
+
     message +=
         "Customer Information:\n";
+
 
     message +=
         "الاسم: " +
         name +
         "\n";
 
+
     message +=
         "العنوان: " +
         address +
-        "\n\n";
+        "\n";
 
 
-    // Order
+
+    // =========================
+    // NOTES
+    // ONLY ADD IF NOT EMPTY
+    // =========================
+
+    if (notes !== "") {
+
+        message +=
+            "الملاحظات: " +
+            notes +
+            "\n";
+
+    }
+
+
+
+    message +=
+        "\n";
+
+
+
+    // =========================
+    // ORDER
+    // =========================
+
     message +=
         "Order:\n";
+
 
 
     cart.forEach(function (item) {
@@ -334,40 +537,63 @@ function placeOrder() {
         const quantity =
             item.quantity || 1;
 
+
         const itemTotal =
             item.price * quantity;
 
-        total += itemTotal;
+
+        total +=
+            itemTotal;
 
 
-        // Product name + quantity
+
         message +=
             quantity +
-            " " +
+            " × " +
             item.name +
-            "\n";
+            " - " +
+            itemTotal.toLocaleString() +
+            " L.L\n";
 
     });
 
 
-    // Total
+
+    // =========================
+    // TOTAL
+    // =========================
+
     message +=
         "\nTotal: " +
         total.toLocaleString() +
         " L.L";
 
 
-    // Encode message
+
+    // =========================
+    // ENCODE MESSAGE
+    // =========================
+
     const encodedMessage =
-        encodeURIComponent(message);
+        encodeURIComponent(
+            message
+        );
 
 
-    // YOUR WHATSAPP NUMBER
+
+    // =========================
+    // WHATSAPP NUMBER
+    // =========================
+
     const whatsappNumber =
         "96181899554";
 
 
-    // WhatsApp URL
+
+    // =========================
+    // WHATSAPP URL
+    // =========================
+
     const whatsappURL =
         "https://wa.me/" +
         whatsappNumber +
@@ -375,22 +601,36 @@ function placeOrder() {
         encodedMessage;
 
 
-    // Open WhatsApp
+
+    // =========================
+    // OPEN WHATSAPP
+    // =========================
+
     window.open(
         whatsappURL,
         "_blank"
     );
 
 
-    // Clear cart
-    localStorage.removeItem("cart");
+
+    // =========================
+    // CLEAR CART
+    // =========================
+
+    localStorage.removeItem(
+        "cart"
+    );
+
 
     cart = [];
 
+
     updateCartCount();
+
     displayCart();
 
 }
+
 
 
 // =====================================================
@@ -398,4 +638,5 @@ function placeOrder() {
 // =====================================================
 
 updateCartCount();
+
 displayCart();

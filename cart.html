@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +18,9 @@
 <body class="cart-page">
 
 
-    <!-- NAVIGATION -->
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
 
     <nav>
 
@@ -34,14 +37,17 @@
                 </a>
             </li>
 
-<li><a href="menu.html">Items</a></li>
+            <li>
+                <a href="menu.html">
+                    Items
+                </a>
+            </li>
 
             <li>
                 <a href="about.html">
                     About
                 </a>
             </li>
-
 
             <li>
                 <a href="cart.html" class="active">
@@ -61,7 +67,9 @@
 
 
 
-    <!-- CART -->
+    <!-- =========================
+         CART SECTION
+    ========================== -->
 
     <section class="cart-section">
 
@@ -73,6 +81,8 @@
 
         <div id="cart-items"></div>
 
+
+        <!-- TOTAL -->
 
         <div class="cart-total">
 
@@ -89,7 +99,10 @@
         </div>
 
 
-        <!-- COMPLETE ORDER -->
+
+        <!-- =========================
+             COMPLETE ORDER BUTTON
+        ========================== -->
 
         <div class="complete-order-container">
 
@@ -104,7 +117,10 @@
         </div>
 
 
-        <!-- CUSTOMER FORM -->
+
+        <!-- =========================
+             CUSTOMER FORM
+        ========================== -->
 
         <div
             class="customer-form"
@@ -116,11 +132,15 @@
             </h2>
 
 
+            <!-- NAME -->
+
             <input
                 type="text"
                 id="customer-name"
                 placeholder="الاسم">
 
+
+            <!-- ADDRESS -->
 
             <input
                 type="text"
@@ -128,7 +148,15 @@
                 placeholder="العنوان">
 
 
-            
+            <!-- NOTES - OPTIONAL -->
+
+            <input
+                type="text"
+                id="customer-notes"
+                placeholder="الملاحظات (اختياري)">
+
+
+            <!-- SEND ORDER -->
 
             <button
                 class="place-order"
@@ -144,7 +172,9 @@
 
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer>
 
@@ -155,8 +185,10 @@
     </footer>
 
 
+
     <script src="cart.js"></script>
 
 </body>
 
 </html>
+
