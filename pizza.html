@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pizza - Al Kamal</title>
+
+<!-- Modern Arabic Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body class="pizza-page">
+
+
+<!-- =========================
+     HEADER / NAVIGATION
+========================== -->
+
+<nav>
+
+    <div class="logo">
+        Al Kamal Croissant
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+
+        <li>
+            <a href="menu.html">Items</a>
+        </li>
+
+        <li>
+            <a href="about.html">About</a>
+        </li>
+
+        <li>
+            <a href="cart.html">
+                🛒 Cart
+                <span id="cart-count">0</span>
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- =========================
+     PIZZA SECTION
+========================== -->
+
+<section class="pizza-section">
+
+
+    <!-- Page Title -->
+
+    <h1>Our Pizza</h1>
+
+
+    <!-- =========================
+         SPECIAL OCCASIONS BANNER
+    ========================== -->
+
+    <div class="occasion-banner">
+
+        <div class="occasion-line"></div>
+
+        <div class="occasion-content">
+
+            <span class="occasion-icon">🍕</span>
+
+            <div>
+
+                <h3>
+                    نستقبل طلباتكم للمناسبات
+                </h3>
+
+                <p>
+                    خلّوا مناسبتكم أطيب مع بيتزا طازجة ومحضّرة بحب ✨
+                </p>
+
+            </div>
+
+            <span class="occasion-icon">✨</span>
+
+        </div>
+
+        <div class="occasion-line"></div>
+
+    </div>
+
+
+    <!-- =========================
+         PIZZA GRID
+    ========================== -->
+
+    <div class="pizza-grid">
+
+
+        <!-- =========================
+             PEPPERONI PIZZA
+        ========================== -->
+
+        <div class="pizza-card">
+
+            <img
+                src="images/pepperoni.jpeg"
+                alt="بيتزا بيبروني">
+
+            <h2>
+                بيتزا بيبروني
+            </h2>
+
+            <div class="pizza-prices">
+
+                <p>
+                    الصغير: 150,000 L.L
+                </p>
+
+                <p>
+                    الكبير: 300,000 L.L
+                </p>
+
+            </div>
+
+            <button
+                class="add-to-cart"
+                onclick="addToCart('بيتزا بيبروني - صغير', 150000)">
+                ＋ Add Small
+            </button>
+
+            <button
+                class="add-to-cart"
+                onclick="addToCart('بيتزا بيبروني - كبير', 300000)">
+                ＋ Add Large
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             VEGETABLE PIZZA
+        ========================== -->
+
+        <div class="pizza-card">
+
+            <img
+                src="images/vegetable.jpeg"
+                alt="بيتزا خضرة">
+
+            <h2>
+                بيتزا خضرة
+            </h2>
+
+            <div class="pizza-prices">
+
+                <p>
+                    الصغير: 150,000 L.L
+                </p>
+
+                <p>
+                    الكبير: 300,000 L.L
+                </p>
+
+            </div>
+
+            <button
+                class="add-to-cart"
+                onclick="addToCart('بيتزا خضرة - صغير', 150000)">
+                ＋ Add Small
+            </button>
+
+            <button
+                class="add-to-cart"
+                onclick="addToCart('بيتزا خضرة - كبير', 300000)">
+                ＋ Add Large
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             SAWAREE PASTRIES
+        ========================== -->
+
+        <div class="pizza-card">
+
+            <img
+                src="images/swaree.jpg"
+                alt="معجنات سواريه">
+
+            <h2>
+                معجنات سواريه
+            </h2>
+
+            <div class="pizza-prices">
+
+                <p>
+                    الدزينة: 5$
+                </p>
+
+            </div>
+
+            <button
+                class="add-to-cart"
+                onclick="addToCart('معجنات سواريه - دزينة', 5)">
+                ＋ Add to Cart
+            </button>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <p>
+        © 2026 Al Kamal Croissant.
+    </p>
+
+</footer>
+
+
+<script src="cart.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Items - Al Kamal Croissant</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="croissants-page">
+
+    <!-- Navigation -->
+    <nav>
+
+        <div class="logo">
+            Al Kamal Croissant
+        </div>
+
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="menu.html">Items</a>
+            </li>
+
+            <li>
+                <a href="about.html">About</a>
+            </li>
+
+            <li>
+                <a href="cart.html">
+                    🛒 Cart
+                    <span id="cart-count">0</span>
+                </a>
+            </li>
+        </ul>
+
+    </nav>
+
+
+    <!-- Croissants Section -->
+    <section class="croissants-section">
+
+        <h1>Our Croissants</h1>
+
+
+        <!-- Occasion Banner -->
+        <div class="occasion-banner">
+
+            <h2>نستقبل طلباتكم للمناسبات</h2>
+
+            <p>
+                لنجعل مناسباتكم أحلى مع كرواسوناتنا الطازجة ✨
+            </p>
+
+        </div>
+
+
+        <!-- Croissants Grid -->
+        <div class="croissants-grid">
+
+
+            <!-- Cheese -->
+            <div class="croissant-card">
+
+                <img src="images/cheese.jpeg" alt="Cheese Croissant">
+
+                <h2>كرواسون جبنة</h2>
+
+                <p>75,000 L.L</p>
+
+                <button
+                    class="add-to-cart"
+                    onclick="addToCart('كرواسون جبنة', 75000)">
+                    ＋ Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- Chocolate -->
+            <div class="croissant-card">
+
+                <img src="images/chocolate.jpg" alt="Chocolate Croissant">
+
+                <h2>كرواسون شوكولا</h2>
+
+                <p>75,000 L.L</p>
+
+                <button
+                    class="add-to-cart"
+                    onclick="addToCart('كرواسون شوكولا', 75000)">
+                    ＋ Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- Zaatar -->
+            <div class="croissant-card">
+
+                <img src="images/zaatar.jpg" alt="Zaatar Croissant">
+
+                <h2>كرواسون زعتر</h2>
+
+                <p>75,000 L.L</p>
+
+                <button
+                    class="add-to-cart"
+                    onclick="addToCart('كرواسون زعتر', 75000)">
+                    ＋ Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- Akawi / Mhamara -->
+            <div class="croissant-card">
+
+                <img src="images/akawi-mhamara.jpg" alt="Akawi Mhamara">
+
+                <h2>كرواسون عكاوي / محمرة</h2>
+
+                <p>100,000 L.L</p>
+
+                <button
+                    class="add-to-cart"
+                    onclick="addToCart('كرواسون عكاوي / محمرة', 100000)">
+                    ＋ Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- Turkey & Kashkawan -->
+            <div class="croissant-card">
+
+                <img src="images/turkey-cheese.jpg" alt="Turkey and Kashkawan">
+
+                <h2>حبش وقشقوان</h2>
+
+                <p class="ingredients">
+                    المكونات: خس، ذرة، كبيس، مايونيز
+                </p>
+
+                <p>250,000 L.L</p>
+
+                <button
+                    class="add-to-cart"
+                    onclick="addToCart('حبش وقشقوان', 250000)">
+                    ＋ Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- Mortadella & Kashkawan -->
+            <div class="croissant-card">
+
+                <img src="images/mortadella-cheese.jpg" alt="Mortadella and Kashkawan">
+
+                <h2>مرتديلا وقشقوان</h2>
+
+                <p class="ingredients">
+                    المكونات: خس، ذرة، كبيس، مايونيز
+                </p>
+
+                <p>250,000 L.L</p>
+
+                <button
+                    class="add-to-cart"
+                    onclick="addToCart('مرتديلا وقشقوان', 250000)">
+                    ＋ Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- Turkey -->
+            <div class="croissant-card">
+
+                <img src="images/turkey.jpg" alt="Turkey">
+
+                <h2>حبش</h2>
+
+                <p class="ingredients">
+                    المكونات: خس، ذرة، كبيس، مايونيز
+                </p>
+
+                <p>250,000 L.L</p>
+
+                <button
+                    class="add-to-cart"
+                    onclick="addToCart('حبش', 250000)">
+                    ＋ Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- Kashkawan -->
+            <div class="croissant-card">
+
+                <img src="images/kashkawan.jpg" alt="Kashkawan">
+
+                <h2>قشقوان</h2>
+
+                <p class="ingredients">
+                    المكونات: خس، ذرة، كبيس، مايونيز
+                </p>
+
+                <p>250,000 L.L</p>
+
+                <button
+                    class="add-to-cart"
+                    onclick="addToCart('قشقوان', 250000)">
+                    ＋ Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- Mortadella -->
+            <div class="croissant-card">
+
+                <img src="images/mortadella.jpg" alt="Mortadella">
+
+                <h2>مرتديلا</h2>
+
+                <p class="ingredients">
+                    المكونات: خس، ذرة، كبيس، مايونيز
+                </p>
+
+                <p>200,000 L.L</p>
+
+                <button
+                    class="add-to-cart"
+                    onclick="addToCart('مرتديلا', 200000)">
+                    ＋ Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- Halloumi -->
+            <div class="croissant-card">
+
+                <img src="images/halom.jpg" alt="Halloumi">
+
+                <h2>حلوم</h2>
+
+                <p class="ingredients">
+                    المكونات: خس، خيار، بندورة، زيتون
+                </p>
+
+                <p>200,000 L.L</p>
+
+                <button
+                    class="add-to-cart"
+                    onclick="addToCart('حلوم', 200000)">
+                    ＋ Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- Labneh & Makdous -->
+            <div class="croissant-card">
+
+                <img src="images/labneh-makdous.jpg" alt="Labneh Makdous">
+
+                <h2>لبنة ومكدوس</h2>
+
+                <p class="ingredients">
+                    المكونات: خس، خيار، بندورة، زيتون
+                </p>
+
+                <p>200,000 L.L</p>
+
+                <button
+                    class="add-to-cart"
+                    onclick="addToCart('لبنة ومكدوس', 200000)">
+                    ＋ Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- Bacon -->
+            <div class="croissant-card">
+
+                <img src="images/becon.jpg" alt="Bacon">
+
+                <h2>بيكون</h2>
+
+                <p class="ingredients">
+                    المكونات: خيار، نعنع، زيتون
+                </p>
+
+                <p>150,000 L.L</p>
+
+                <button
+                    class="add-to-cart"
+                    onclick="addToCart('بيكون', 150000)">
+                    ＋ Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- Pook -->
+            <div class="croissant-card">
+
+                <img src="images/pook.jpg" alt="Pook">
+
+                <h2>بوك</h2>
+
+                <p class="ingredients">
+                    المكونات: خيار، نعنع، زيتون
+                </p>
+
+                <p>150,000 L.L</p>
+
+                <button
+                    class="add-to-cart"
+                    onclick="addToCart('بوك', 150000)">
+                    ＋ Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- Four Cheese -->
+            <div class="croissant-card">
+
+                <img src="images/4-cheese.jpg" alt="Four Cheese">
+
+                <h2>Four Cheese</h2>
+
+                <p class="ingredients">
+                    المكونات: crispy potato, BBQ sauce
+                </p>
+
+                <p>300,000 L.L</p>
+
+                <button
+                    class="add-to-cart"
+                    onclick="addToCart('Four Cheese', 300000)">
+                    ＋ Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- Kunafa -->
+            <div class="croissant-card">
+
+                <img src="images/kunafa.jpg" alt="Kunafa">
+
+                <h2>كنافة</h2>
+
+                <p>300,000 L.L</p>
+
+                <button
+                    class="add-to-cart"
+                    onclick="addToCart('كنافة', 300000)">
+                    ＋ Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- Nutella -->
+            <div class="croissant-card">
+
+                <img src="images/nutella.jpeg" alt="Nutella">
+
+                <h2>نيوتيلا</h2>
+                <p class="ingredients">
+                    المكونات: موز، فريز
+                </p>
+
+                <p>250,000 L.L</p>
+
+                <button
+                    class="add-to-cart"
+                    onclick="addToCart('نيوتيلا', 250000)">
+                    ＋ Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- Lotus -->
+            <div class="croissant-card">
+
+                <img src="images/lotus.jpg" alt="Lotus">
+
+                <h2>لوتس</h2>
+
+
+                <p>250,000 L.L</p>
+
+                <button
+                    class="add-to-cart"
+                    onclick="addToCart('لوتس', 250000)">
+                    ＋ Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- Pistachio -->
+            <div class="croissant-card">
+
+                <img src="images/pistachio.jpeg" alt="Pistachio">
+
+                <h2>بستاشيو</h2>
+                <p class="ingredients">
+                    المكونات: موز، فريز
+                </p>
+
+                <p>250,000 L.L</p>
+
+                <button
+                    class="add-to-cart"
+                    onclick="addToCart('بستاشيو', 250000)">
+                    ＋ Add to Cart
+                </button>
+
+            </div>
+             <div class="croissant-card">
+
+                <img src="images/mraba.jpeg" alt="mraba">
+
+                <h2>مربى فريز</h2>
+
+                <p>250,000 L.L</p>
+
+                <button
+                    class="add-to-cart"
+                    onclick="addToCart('مربى فريز', 250000)">
+                    ＋ Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- Summer Trend -->
+            <div class="croissant-card">
+
+                <img src="images/summer-trand.jpg" alt="Summer Trend">
+
+                <h2>Summer Trend</h2>
+                <h2>croissant + icecream</h2>
+
+                <p>250,000 L.L</p>
+
+                <button
+                    class="add-to-cart"
+                    onclick="addToCart('Summer Trend', 250000)">
+                    ＋ Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- Sware -->
+            <div class="croissant-card">
+
+                <img src="images/sware.jpg" alt="Sware">
+
+                <h2>كرواسون سواريه (جبنة - شوكولا - زعتر)</h2>
+
+                <p>$6: الدزينة</p>
+
+                <button
+                    class="add-to-cart"
+                    onclick="addToCart('كرواسون سواريه (جبنة - شوكولا - زعتر)', 6000)">
+                    ＋ Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- Sware Stuffed -->
+            <div class="croissant-card">
+
+                <img src="images/swareee.jpg" alt="Stuffed Sware">
+
+                <h2>كرواسون سواريه محشي للمناسبات</h2>
+
+                <p>$10: الدزينة</p>
+
+                <button
+                    class="add-to-cart"
+                    onclick="addToCart('كرواسون سواريه محشي للمناسبات', 10000)">
+                    ＋ Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Al Kamal Croissant.</p>
+    </footer>
+
+
+    <script src="cart.js"></script>
+
+</body>
+
+</html>

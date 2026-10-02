@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cart - Al Kamal Croissant</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="cart-page">
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <div class="logo">
+            Al Kamal Croissant
+        </div>
+
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+<li><a href="menu.html">Items</a></li>
+
+            <li>
+                <a href="about.html">
+                    About
+                </a>
+            </li>
+
+
+            <li>
+                <a href="cart.html" class="active">
+
+                    🛒 Cart
+
+                    <span id="cart-count">
+                        0
+                    </span>
+
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <!-- CART -->
+
+    <section class="cart-section">
+
+
+        <h1>
+            Your Cart 🛒
+        </h1>
+
+
+        <div id="cart-items"></div>
+
+
+        <div class="cart-total">
+
+            <h2>
+
+                Total:
+
+                <span id="cart-total">
+                    0 L.L
+                </span>
+
+            </h2>
+
+        </div>
+
+
+        <!-- COMPLETE ORDER -->
+
+        <div class="complete-order-container">
+
+            <button
+                class="complete-order"
+                onclick="showCustomerForm()">
+
+                Complete Your Order
+
+            </button>
+
+        </div>
+
+
+        <!-- CUSTOMER FORM -->
+
+        <div
+            class="customer-form"
+            id="customer-form"
+            style="display: none;">
+
+            <h2>
+                Customer Information
+            </h2>
+
+
+            <input
+                type="text"
+                id="customer-name"
+                placeholder="الاسم">
+
+
+            <input
+                type="text"
+                id="customer-address"
+                placeholder="العنوان">
+
+
+            
+
+            <button
+                class="place-order"
+                onclick="placeOrder()">
+
+                Done & Send Order to WhatsApp
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Al Kamal Croissant.
+        </p>
+
+    </footer>
+
+
+    <script src="cart.js"></script>
+
+</body>
+
+</html>
