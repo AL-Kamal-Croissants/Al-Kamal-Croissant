@@ -1766,3 +1766,273 @@ footer p {
         font-size: 27px;
     }
 }
+/* =====================================================
+   OPENING HOURS + DELIVERY — HOME DESIGN
+===================================================== */
+
+.opening-hours {
+    width: 100%;
+    padding: 80px 20px;
+    background: #fff4e3;
+    text-align: center;
+}
+
+.hours-card {
+    max-width: 900px;
+    margin: auto;
+    padding: 45px 50px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border: 1px solid rgba(201, 139, 74, 0.20);
+    border-radius: 24px;
+
+    box-shadow:
+        0 12px 30px rgba(107, 63, 32, 0.10);
+}
+
+.hours-card h2 {
+    color: #6b3f20;
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.hours-subtitle {
+    color: #805333;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.hours-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.time-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 22px 15px;
+
+    background: #fffaf4;
+    border: 1px solid #ead8c3;
+    border-radius: 16px;
+
+    transition: 0.3s;
+}
+
+.time-row:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 7px 18px rgba(107, 63, 32, 0.10);
+}
+
+.time-row span:first-child {
+    color: #c98b4a;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.time-row span:last-child {
+    color: #6b3f20;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   DELIVERY SECTION
+===================================================== */
+
+.delivery-section {
+    width: 100%;
+    padding: 30px 20px 80px;
+    background: #fff4e3;
+}
+
+.delivery-card {
+    max-width: 900px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    padding: 32px 40px;
+
+    background: linear-gradient(
+        135deg,
+        #f3e3c3,
+        #fffaf4
+    );
+
+    border: 1px solid #dfc49e;
+    border-radius: 24px;
+
+    box-shadow:
+        0 10px 28px rgba(107, 63, 32, 0.10);
+
+    transition: 0.3s;
+}
+
+.delivery-card:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 15px 32px rgba(107, 63, 32, 0.14);
+}
+
+.delivery-icon {
+    min-width: 75px;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #c98b4a;
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 35px;
+
+    box-shadow:
+        0 6px 15px rgba(201, 139, 74, 0.25);
+}
+
+.delivery-content {
+    text-align: left;
+    flex: 1;
+}
+
+.delivery-badge {
+    display: inline-block;
+
+    padding: 6px 14px;
+
+    background: #fff;
+    color: #a96d35;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+.delivery-content h2 {
+    color: #6b3f20;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.delivery-content p {
+    color: #805333;
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+/* =====================================================
+   HOME MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .opening-hours {
+        padding: 55px 15px;
+    }
+
+    .hours-card {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+
+    .hours-card h2 {
+        font-size: 29px;
+    }
+
+    .hours-subtitle {
+        font-size: 14px;
+    }
+
+    .hours-info {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .time-row {
+        padding: 18px 12px;
+    }
+
+    .delivery-section {
+        padding: 10px 15px 55px;
+    }
+
+   .delivery-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 30px 50px;
+    gap: 30px;
+}
+
+.delivery-icon {
+    flex-shrink: 0;
+    font-size: 50px;
+}
+
+.delivery-content {
+    text-align: right;
+    direction: rtl;
+}
+
+.delivery-content h2 {
+    font-size: 32px;
+    margin: 8px 0;
+}
+
+.delivery-content p {
+    font-size: 17px;
+    margin: 0;
+}
+
+.delivery-badge {
+    display: inline-block;
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .delivery-card {
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 25px 20px;
+        gap: 18px;
+    }
+
+    .delivery-icon {
+        font-size: 40px;
+    }
+
+    .delivery-content {
+        text-align: right;
+    }
+
+    .delivery-content h2 {
+        font-size: 26px;
+    }
+
+    .delivery-content p {
+        font-size: 14px;
+    }
+
+}}
