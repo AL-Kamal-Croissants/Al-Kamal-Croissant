@@ -1823,7 +1823,7 @@ footer p {
 .delivery-content h2 {
     margin:
         0 0 8px;
-    color: #4b3022;
+    
     font-size: 26px;
     font-weight: 700;
 }
@@ -3025,5 +3025,462 @@ footer p {
 
     .cart-section h1 {
         font-size: 27px;
+    }
+}
+/* =====================================================
+   CART PAGE
+===================================================== */
+
+/* =====================================================
+   CART PAGE
+===================================================== */
+
+.cart-section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    text-align: center;
+}
+
+
+/* =====================================================
+   CART TITLE
+===================================================== */
+
+.cart-section h1 {
+    font-size: 38px;
+    margin-bottom: 30px;
+    color: #6b3f20;
+}
+
+
+/* =====================================================
+   CART ITEMS
+===================================================== */
+
+#cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    padding: 18px 22px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 15px rgba(107, 63, 32, 0.08);
+
+    font-size: 17px;
+}
+
+.cart-item span {
+    color: #6b3f20;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   REMOVE BUTTON — CREAM
+===================================================== */
+
+.cart-item button {
+    background: #f3e3c3;
+    color: #5a351d;
+
+    border: 1px solid #d8bd91;
+
+    padding: 8px 14px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.cart-item button:hover {
+    background: #e8d1a8;
+    color: #4a2c18;
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   EMPTY CART
+===================================================== */
+
+.empty-cart {
+    font-size: 20px;
+
+    padding: 30px;
+
+    color: #805333;
+
+    background:
+        rgba(255, 255, 255, 0.90);
+
+    border-radius: 12px;
+}
+
+
+/* =====================================================
+   TOTAL
+===================================================== */
+
+.cart-total {
+    margin-top: 30px;
+
+    padding: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.90);
+
+    border-radius: 12px;
+
+    border:
+        1px solid rgba(216, 189, 145, 0.35);
+}
+
+.cart-total h2 {
+    margin: 0;
+
+    font-size: 25px;
+
+    color: #6b3f20;
+}
+
+#cart-total {
+    color: #a96d35;
+}
+
+
+/* =====================================================
+   COMPLETE ORDER — CREAM
+===================================================== */
+
+.complete-order-container {
+    margin-top: 25px;
+}
+
+.complete-order {
+    padding: 14px 28px;
+
+    background: #f3e3c3;
+
+    color: #5a351d;
+
+    border: 1px solid #d8bd91;
+
+    border-radius: 10px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 4px 10px rgba(107, 63, 32, 0.08);
+}
+
+.complete-order:hover {
+    background: #e8d1a8;
+
+    color: #4a2c18;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 14px rgba(107, 63, 32, 0.12);
+}
+
+
+/* =====================================================
+   CUSTOMER FORM
+===================================================== */
+
+.customer-form {
+    margin-top: 30px;
+
+    padding: 30px;
+
+    background:
+        rgba(255, 255, 255, 0.95);
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 20px rgba(107, 63, 32, 0.08);
+}
+
+.customer-form h2 {
+    margin-bottom: 25px;
+
+    font-size: 26px;
+
+    color: #6b3f20;
+}
+
+
+/* =====================================================
+   CUSTOMER INPUTS
+===================================================== */
+
+.customer-form input {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px 15px;
+
+    margin-bottom: 15px;
+
+    border:
+        1px solid #d8c8b8;
+
+    border-radius: 8px;
+
+    background: #fffaf4;
+
+    color: #5a351d;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.customer-form input::placeholder {
+    color: #a28c7c;
+}
+
+.customer-form input:focus {
+    border-color: #d8bd91;
+
+    box-shadow:
+        0 0 5px rgba(216, 189, 145, 0.25);
+}
+
+
+/* =====================================================
+   DELIVERY / COLLECTION
+===================================================== */
+
+.order-type {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin: 10px 0 20px;
+}
+
+
+/* =====================================================
+   ORDER TYPE BUTTON — CREAM
+===================================================== */
+
+.order-type-btn {
+    flex: 1;
+
+    padding: 13px 20px;
+
+    background: #f8ecd7;
+
+    color: #5a351d;
+
+    border:
+        2px solid #d8bd91;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 3px 8px rgba(107, 63, 32, 0.05);
+}
+
+.order-type-btn:hover {
+    background: #e8d1a8;
+
+    color: #5a351d;
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   SELECTED ORDER TYPE — CREAM
+===================================================== */
+
+.order-type-btn.selected {
+    background: #e8d1a8;
+
+    color: #4a2c18;
+
+    border-color: #c9a875;
+
+    box-shadow:
+        0 4px 10px rgba(107, 63, 32, 0.10);
+}
+
+
+/* =====================================================
+   PLACE ORDER / SEND ORDER — CREAM
+===================================================== */
+
+.place-order {
+    width: 100%;
+
+    padding: 14px;
+
+    margin-top: 10px;
+
+    background: #f3e3c3;
+
+    color: #5a351d;
+
+    border:
+        1px solid #d8bd91;
+
+    border-radius: 9px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 4px 10px rgba(107, 63, 32, 0.08);
+}
+
+.place-order:hover {
+    background: #e8d1a8;
+
+    color: #4a2c18;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 14px rgba(107, 63, 32, 0.12);
+}
+
+
+/* =====================================================
+   CART NOTIFICATION — SOFT CREAM
+===================================================== */
+
+.cart-notification {
+    position: fixed;
+
+    top: 90px;
+
+    right: 25px;
+
+    background: #f3e3c3;
+
+    color: #5a351d;
+
+    padding: 14px 20px;
+
+    border:
+        1px solid #d8bd91;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 6px 20px rgba(107, 63, 32, 0.15);
+
+    opacity: 0;
+
+    transform: translateY(-10px);
+
+    transition: 0.3s;
+
+    z-index: 9999;
+
+    font-weight: 600;
+}
+
+.cart-notification.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   MOBILE CART
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .cart-section {
+        width: 100%;
+
+        padding: 20px;
+
+        margin: 30px auto;
+
+        box-sizing: border-box;
+    }
+
+    .cart-section h1 {
+        font-size: 30px;
+    }
+
+    .cart-item {
+        flex-direction: column;
+
+        gap: 10px;
+
+        text-align: center;
+    }
+
+    .cart-item button {
+        width: 100%;
+    }
+
+    .order-type {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .order-type-btn {
+        width: 100%;
+    }
+
+    .customer-form {
+        padding: 20px;
+    }
+
+    .complete-order {
+        width: 100%;
     }
 }

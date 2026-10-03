@@ -79,6 +79,8 @@
         </h1>
 
 
+        <!-- CART ITEMS -->
+
         <div id="cart-items"></div>
 
 
@@ -140,15 +142,53 @@
                 placeholder="الاسم">
 
 
-            <!-- ADDRESS -->
+
+            <!-- =========================
+                 DELIVERY / PICKUP
+            ========================== -->
+
+            <div class="order-type">
+
+                <button
+                    type="button"
+                    class="order-type-btn"
+                    id="delivery-btn"
+                    onclick="selectOrderType('Delivery')">
+
+                    Delivery
+
+                </button>
+
+
+                <button 
+    type="button" 
+    class="order-type-btn" 
+    id="Takeaway-btn" 
+    onclick="selectOrderType('Takeaway')">
+    Takeaway
+</button>
+
+            </div>
+
+
+
+            <!-- =========================
+                 ADDRESS
+                 ONLY FOR DELIVERY
+            ========================== -->
 
             <input
                 type="text"
                 id="customer-address"
-                placeholder="العنوان">
+                placeholder="العنوان"
+                style="display: none;">
 
 
-            <!-- NOTES - OPTIONAL -->
+
+            <!-- =========================
+                 NOTES
+                 ALWAYS VISIBLE
+            ========================== -->
 
             <input
                 type="text"
@@ -156,7 +196,10 @@
                 placeholder="الملاحظات (اختياري)">
 
 
-            <!-- SEND ORDER -->
+
+            <!-- =========================
+                 SEND ORDER
+            ========================== -->
 
             <button
                 class="place-order"
@@ -186,9 +229,11 @@
 
 
 
+    <!-- JAVASCRIPT -->
+
     <script src="cart.js"></script>
+
 
 </body>
 
 </html>
-

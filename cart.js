@@ -1,10 +1,11 @@
-
 // =====================================================
 // CART
 // =====================================================
 
 let cart =
     JSON.parse(localStorage.getItem("cart")) || [];
+
+let selectedOrderType = "";
 
 
 
@@ -187,7 +188,6 @@ function displayCart() {
 
     cartItems.innerHTML = "";
 
-
     let total = 0;
 
 
@@ -331,8 +331,6 @@ function removeFromCart(index) {
 
 function showCustomerForm() {
 
-    // Check if cart is empty
-
     if (cart.length === 0) {
 
         alert(
@@ -369,6 +367,94 @@ function showCustomerForm() {
 
 
 // =====================================================
+// SELECT ORDER TYPE
+// =====================================================
+
+function selectOrderType(type) {
+
+    selectedOrderType = type;
+
+
+    const deliveryBtn =
+        document.getElementById(
+            "delivery-btn"
+        );
+
+
+    const takeawayBtn =
+        document.getElementById(
+            "Takeaway-btn"
+        );
+
+
+    const addressInput =
+        document.getElementById(
+            "customer-address"
+        );
+
+
+
+    // =========================
+    // DELIVERY
+    // =========================
+
+    if (type === "Delivery") {
+
+        addressInput.style.display =
+            "block";
+
+
+        addressInput.required =
+            true;
+
+
+        deliveryBtn.classList.add(
+            "selected"
+        );
+
+
+        takeawayBtn.classList.remove(
+            "selected"
+        );
+
+    }
+
+
+
+    // =========================
+    // TAKEAWAY
+    // =========================
+
+    else if (type === "Takeaway") {
+
+        addressInput.style.display =
+            "none";
+
+
+        addressInput.required =
+            false;
+
+
+        addressInput.value =
+            "";
+
+
+        takeawayBtn.classList.add(
+            "selected"
+        );
+
+
+        deliveryBtn.classList.remove(
+            "selected"
+        );
+
+    }
+
+}
+
+
+
+// =====================================================
 // SEND ORDER TO WHATSAPP
 // =====================================================
 
@@ -394,7 +480,7 @@ function placeOrder() {
 
 
     // =========================
-    // CHECK INPUTS
+    // CHECK FORM
     // =========================
 
     if (
@@ -405,6 +491,22 @@ function placeOrder() {
 
         alert(
             "Customer form is missing."
+        );
+
+        return;
+
+    }
+
+
+
+    // =========================
+    // CHECK ORDER TYPE
+    // =========================
+
+    if (selectedOrderType === "") {
+
+        alert(
+            "Please select Delivery or Takeaway."
         );
 
         return;
@@ -447,17 +549,33 @@ function placeOrder() {
 
 
     // =========================
-    // NAME + ADDRESS REQUIRED
-    // NOTES OPTIONAL
+    // NAME REQUIRED
+    // =========================
+
+    if (name === "") {
+
+        alert(
+            "Please enter your name."
+        );
+
+        return;
+
+    }
+
+
+
+    // =========================
+    // ADDRESS REQUIRED ONLY
+    // FOR DELIVERY
     // =========================
 
     if (
-        name === "" ||
+        selectedOrderType === "Delivery" &&
         address === ""
     ) {
 
         alert(
-            "Please enter your name and address."
+            "Please enter your address."
         );
 
         return;
@@ -483,7 +601,9 @@ function placeOrder() {
 
 
 
+    // =========================
     // CUSTOMER INFORMATION
+    // =========================
 
     message +=
         "Customer Information:\n";
@@ -495,16 +615,37 @@ function placeOrder() {
         "\n";
 
 
+
+    // =========================
+    // ORDER TYPE
+    // =========================
+
     message +=
-        "العنوان: " +
-        address +
+        "طريقة الطلب: " +
+        selectedOrderType +
         "\n";
 
 
 
     // =========================
+    // ADDRESS ONLY FOR DELIVERY
+    // =========================
+
+    if (
+        selectedOrderType === "Delivery"
+    ) {
+
+        message +=
+            "العنوان: " +
+            address +
+            "\n";
+
+    }
+
+
+
+    // =========================
     // NOTES
-    // ONLY ADD IF NOT EMPTY
     // =========================
 
     if (notes !== "") {
@@ -525,11 +666,11 @@ function placeOrder() {
 
     // =========================
     // ORDER
+    // NO ITEM PRICES
     // =========================
 
     message +=
         "Order:\n";
-
 
 
     cart.forEach(function (item) {
@@ -547,20 +688,21 @@ function placeOrder() {
 
 
 
+        // Only product name + quantity
+        // No individual price
+
         message +=
             quantity +
             " × " +
             item.name +
-            " - " +
-            itemTotal.toLocaleString() +
-            " L.L\n";
+            "\n";
 
     });
 
 
 
     // =========================
-    // TOTAL
+    // TOTAL ONLY
     // =========================
 
     message +=
