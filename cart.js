@@ -8,12 +8,18 @@ let cart =
 let selectedOrderType = "";
 
 
+// =====================================================
+// USD TO L.L RATE
+// =====================================================
+
+const USD_TO_LL = 89000;
+
 
 // =====================================================
 // ADD TO CART
 // =====================================================
 
-function addToCart(name, price) {
+function addToCart(name, price, currency = "L.L") {
 
     const existingItem =
         cart.find(function (item) {
@@ -37,6 +43,8 @@ function addToCart(name, price) {
             name: name,
 
             price: price,
+
+            currency: currency,
 
             quantity: 1
 
@@ -162,6 +170,44 @@ function showNotification(message) {
 
 
 // =====================================================
+// FORMAT PRICE
+// =====================================================
+
+function formatPrice(price, currency) {
+
+    if (currency === "$") {
+
+        return "$" +
+            Number(price).toLocaleString();
+
+    }
+
+    return Number(price).toLocaleString() +
+        " L.L";
+
+}
+
+
+
+// =====================================================
+// CONVERT PRICE TO L.L
+// =====================================================
+
+function convertToLL(price, currency) {
+
+    if (currency === "$") {
+
+        return Number(price) * USD_TO_LL;
+
+    }
+
+    return Number(price);
+
+}
+
+
+
+// =====================================================
 // DISPLAY CART
 // =====================================================
 
@@ -187,8 +233,6 @@ function displayCart() {
 
 
     cartItems.innerHTML = "";
-
-    let total = 0;
 
 
 
@@ -220,6 +264,14 @@ function displayCart() {
 
 
     // =========================
+    // TOTAL IN L.L
+    // =========================
+
+    let totalLL = 0;
+
+
+
+    // =========================
     // DISPLAY PRODUCTS
     // =========================
 
@@ -229,12 +281,22 @@ function displayCart() {
             item.quantity || 1;
 
 
+        const currency =
+            item.currency || "L.L";
+
+
         const itemTotal =
-            item.price * quantity;
+            Number(item.price) * quantity;
 
 
-        total +=
-            itemTotal;
+
+        // Convert everything to L.L
+
+        totalLL +=
+            convertToLL(
+                itemTotal,
+                currency
+            );
 
 
 
@@ -257,7 +319,10 @@ function displayCart() {
 
             <span>
 
-                ${itemTotal.toLocaleString()} L.L
+                ${formatPrice(
+                    itemTotal,
+                    currency
+                )}
 
             </span>
 
@@ -285,7 +350,7 @@ function displayCart() {
     // =========================
 
     totalElement.textContent =
-        total.toLocaleString() +
+        totalLL.toLocaleString() +
         " L.L";
 
 }
@@ -585,10 +650,10 @@ function placeOrder() {
 
 
     // =========================
-    // TOTAL
+    // TOTAL IN L.L
     // =========================
 
-    let total = 0;
+    let totalLL = 0;
 
 
 
@@ -679,17 +744,26 @@ function placeOrder() {
             item.quantity || 1;
 
 
+        const currency =
+            item.currency || "L.L";
+
+
         const itemTotal =
-            item.price * quantity;
-
-
-        total +=
-            itemTotal;
+            Number(item.price) * quantity;
 
 
 
-        // Only product name + quantity
-        // No individual price
+        // Convert item total to L.L
+
+        totalLL +=
+            convertToLL(
+                itemTotal,
+                currency
+            );
+
+
+
+        // Only quantity + product name
 
         message +=
             quantity +
@@ -702,12 +776,15 @@ function placeOrder() {
 
 
     // =========================
-    // TOTAL ONLY
+    // TOTAL
     // =========================
 
     message +=
-        "\nTotal: " +
-        total.toLocaleString() +
+        "\nTotal: ";
+
+
+    message +=
+        totalLL.toLocaleString() +
         " L.L";
 
 

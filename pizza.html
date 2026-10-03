@@ -1,28 +1,29 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza - Al Kamal</title>
 
-<title>Pizza - Al Kamal</title>
+    <!-- Modern Arabic Font -->
 
-<!-- Modern Arabic Font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link
-    href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-<!-- CSS -->
-<link rel="stylesheet" href="style.css">
+    <!-- CSS -->
 
+    <link rel="stylesheet" href="style.css">
 
 </head>
+
 
 <body class="pizza-page">
 
@@ -53,8 +54,11 @@
 
         <li>
             <a href="cart.html">
+
                 🛒 Cart
+
                 <span id="cart-count">0</span>
+
             </a>
         </li>
 
@@ -143,14 +147,18 @@
 
             <button
                 class="add-to-cart"
-                onclick="addToCart('بيتزا بيبروني - صغير', 150000)">
+                onclick="addToCart('بيتزا بيبروني - صغير', 150000, 'L.L')">
+
                 ＋ Add Small
+
             </button>
 
             <button
                 class="add-to-cart"
-                onclick="addToCart('بيتزا بيبروني - كبير', 300000)">
+                onclick="addToCart('بيتزا بيبروني - كبير', 300000, 'L.L')">
+
                 ＋ Add Large
+
             </button>
 
         </div>
@@ -184,14 +192,18 @@
 
             <button
                 class="add-to-cart"
-                onclick="addToCart('بيتزا خضرة - صغير', 150000)">
+                onclick="addToCart('بيتزا خضرة - صغير', 150000, 'L.L')">
+
                 ＋ Add Small
+
             </button>
 
             <button
                 class="add-to-cart"
-                onclick="addToCart('بيتزا خضرة - كبير', 300000)">
+                onclick="addToCart('بيتزا خضرة - كبير', 300000, 'L.L')">
+
                 ＋ Add Large
+
             </button>
 
         </div>
@@ -214,15 +226,17 @@
             <div class="pizza-prices">
 
                 <p>
-                    الدزينة: 5$
+                    الدزينة: $5
                 </p>
 
             </div>
 
             <button
                 class="add-to-cart"
-                onclick="addToCart('معجنات سواريه - دزينة', 5)">
+                onclick="addToCart('معجنات سواريه - دزينة', 5, '$')">
+
                 ＋ Add to Cart
+
             </button>
 
         </div>
