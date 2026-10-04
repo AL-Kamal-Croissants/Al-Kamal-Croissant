@@ -2036,3 +2036,65 @@ footer p {
     }
 
 }}
+/* =====================================================
+   LOCATION SECTION
+===================================================== */
+
+.location-section {
+    padding: 70px 20px;
+    text-align: center;
+    background: rgba(255, 244, 227, 0.90);
+}
+
+.location-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.location-content h2 {
+    color: #6b3f20;
+    font-size: 32px;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.location-content p {
+    color: #704528;
+    font-size: 19px;
+    margin-bottom: 25px;
+}
+
+
+/* Google Maps Button */
+
+.location-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 14px 28px;
+
+    background: #f3e3c3;
+    color: #5a351d;
+
+    border: 1px solid #d8bd91;
+    border-radius: 10px;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+.location-button i {
+    font-size: 20px;
+}
+
+.location-button:hover {
+    background: #c98b4a;
+    color: white;
+    transform: translateY(-2px);
+}
