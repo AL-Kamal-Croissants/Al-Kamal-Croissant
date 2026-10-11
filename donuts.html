@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Donuts - Al Kamal Croissant</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="product-page">
+
+    <!-- NAVIGATION -->
+    <nav>
+
+        <div class="logo">
+            Al Kamal Croissant
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="menu.html">Items</a>
+            </li>
+
+            <li>
+                <a href="about.html">About</a>
+            </li>
+
+            <li>
+                <a href="cart.html">
+                    🛒 Cart
+                    <span id="cart-count">0</span>
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- DONUTS -->
+
+    <section class="products-section">
+
+        <h1>Our Donuts</h1>
+
+       
+         <div class="donuts-occasion">
+
+            <h2>
+                🍩 دونات للمناسبات الخاصة 🎉
+            </h2>
+
+            <p>
+                فيكن تطلبوا دونات للمناسبات وأعياد الميلاد
+                والحفلات والاحتفالات الخاصة.
+            </p>
+
+        </div>
+
+
+        <div class="products-grid">
+
+
+            <div class="product-card">
+
+                <img src="images/shokola.jpeg" alt="Donut">
+
+                <h3>
+دونتس شوكولا               </h3>
+
+                <div class="product-price">
+                    1$
+                </div>
+
+                <button onclick="addToCart('دونتس شوكولا ', 1, '$')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <img src="images/lotus.jpeg" alt="Donut">
+
+                <h3>
+دونتس لوتس       </h3>
+
+                <div class="product-price">
+1$                </div>
+
+                <button onclick="addToCart('دونتس لوتس ', 1, '$')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <img src="images/orio.jpeg" alt="Donut">
+
+                <h3>
+                      دونتس اوريو  
+</h3>
+
+                <div class="product-price">
+1$                </div>
+
+                <button onclick="addToCart('دونتس اوريو', 1, '$')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <img src="images/pestashyo.jpeg" alt="Donut">
+
+                <h3>
+دونتس بستاشيو           </h3>
+
+                <div class="product-price">
+                    1$
+                </div>
+
+                <button onclick="addToCart('دونتس بستاشيو ', 1, '$')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <img src="images/kinder.jpeg" alt="Donut">
+
+                <h3>
+دونتس كيندر</h3>
+
+                <div class="product-price">
+1$                </div>
+
+                <button onclick="addToCart('دونتس كيندر', 1, '$')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <img src="images/snickers.jpeg" alt="Donut">
+
+                <h3>
+    دونتس سنيكرز          </h3>
+
+                <div class="product-price">
+1$                </div>
+
+                <button onclick="addToCart('دونتس سنيكرز ', 1, '$')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- SPECIAL OCCASIONS -->
+
+       
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Al Kamal Croissant.
+        </p>
+
+    </footer>
+
+
+    <script src="cart.js"></script>
+
+</body>
+
+</html>

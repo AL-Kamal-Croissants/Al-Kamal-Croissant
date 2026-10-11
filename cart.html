@@ -1,239 +1,199 @@
+<!DOCTYPE html> <html lang="en"> <head>
+<meta charset="UTF-8">
 
-<!DOCTYPE html>
-<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
+<title>Cart - Al Kamal Croissant</title>
 
-    <meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head> <body class="cart-page">
+<!-- =========================
+     NAVIGATION
+========================== -->
 
-    <title>Cart - Al Kamal Croissant</title>
+<nav>
 
-    <link rel="stylesheet" href="style.css">
+    <div class="logo">
+        Al Kamal Croissant
+    </div>
 
-</head>
+    <ul>
+
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="menu.html">
+                Items
+            </a>
+        </li>
+
+        <li>
+            <a href="about.html">
+                About
+            </a>
+        </li>
+
+        <li>
+            <a href="cart.html" class="active">
+                🛒 Cart
+                <span id="cart-count">0</span>
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
 
 
-<body class="cart-page">
+<!-- =========================
+     CART SECTION
+========================== -->
+
+<section class="cart-section">
+
+    <h1>
+        Your Cart 🛒
+    </h1>
+
+
+    <!-- CART ITEMS -->
+
+    <div id="cart-items"></div>
+
+
+    <!-- TOTAL -->
+
+    <div class="cart-total">
+
+        <h2>
+            Total:
+            <span id="cart-total">
+                0 L.L
+            </span>
+        </h2>
+
+    </div>
 
 
     <!-- =========================
-         NAVIGATION
+         COMPLETE ORDER BUTTON
     ========================== -->
 
-    <nav>
+    <div class="complete-order-container">
 
-        <div class="logo">
-            Al Kamal Croissant
-        </div>
+        <button
+            class="complete-order"
+            onclick="showCustomerForm()">
 
+            Complete Your Order
 
-        <ul>
+        </button>
 
-            <li>
-                <a href="index.html">
-                    Home
-                </a>
-            </li>
-
-            <li>
-                <a href="menu.html">
-                    Items
-                </a>
-            </li>
-
-            <li>
-                <a href="about.html">
-                    About
-                </a>
-            </li>
-
-            <li>
-                <a href="cart.html" class="active">
-
-                    🛒 Cart
-
-                    <span id="cart-count">
-                        0
-                    </span>
-
-                </a>
-            </li>
-
-        </ul>
-
-    </nav>
-
+    </div>
 
 
     <!-- =========================
-         CART SECTION
+         CUSTOMER FORM
     ========================== -->
 
-    <section class="cart-section">
+    <div
+        class="customer-form"
+        id="customer-form"
+        style="display: none;">
+
+        <h2>
+            Customer Information
+        </h2>
 
 
-        <h1>
-            Your Cart 🛒
-        </h1>
+        <!-- NAME -->
 
-
-        <!-- CART ITEMS -->
-
-        <div id="cart-items"></div>
-
-
-        <!-- TOTAL -->
-
-        <div class="cart-total">
-
-            <h2>
-
-                Total:
-
-                <span id="cart-total">
-                    0 L.L
-                </span>
-
-            </h2>
-
-        </div>
-
+        <input
+            type="text"
+            id="customer-name"
+            placeholder="الاسم">
 
 
         <!-- =========================
-             COMPLETE ORDER BUTTON
+             DELIVERY / PICKUP
         ========================== -->
 
-        <div class="complete-order-container">
+        <div class="order-type">
 
             <button
-                class="complete-order"
-                onclick="showCustomerForm()">
+                type="button"
+                class="order-type-btn"
+                id="delivery-btn"
+                onclick="selectOrderType('Delivery')">
 
-                Complete Your Order
+                Delivery
+
+            </button>
+
+
+            <button
+                type="button"
+                class="order-type-btn"
+                id="Takeaway-btn"
+                onclick="selectOrderType('Takeaway')">
+
+                Takeaway
 
             </button>
 
         </div>
 
 
+        <!-- ADDRESS -->
 
-        <!-- =========================
-             CUSTOMER FORM
-        ========================== -->
-
-        <div
-            class="customer-form"
-            id="customer-form"
+        <input
+            type="text"
+            id="customer-address"
+            placeholder="العنوان"
             style="display: none;">
 
-            <h2>
-                Customer Information
-            </h2>
+
+        <!-- NOTES -->
+
+        <input
+            type="text"
+            id="customer-notes"
+            placeholder="الملاحظات (اختياري)">
 
 
-            <!-- NAME -->
+        <!-- SEND ORDER -->
 
-            <input
-                type="text"
-                id="customer-name"
-                placeholder="الاسم">
+        <button
+            class="place-order"
+            onclick="placeOrder()">
 
+            Done & Send Order to WhatsApp
 
+        </button>
 
-            <!-- =========================
-                 DELIVERY / PICKUP
-            ========================== -->
+    </div>
 
-            <div class="order-type">
-
-                <button
-                    type="button"
-                    class="order-type-btn"
-                    id="delivery-btn"
-                    onclick="selectOrderType('Delivery')">
-
-                    Delivery
-
-                </button>
+</section>
 
 
-                <button 
-    type="button" 
-    class="order-type-btn" 
-    id="Takeaway-btn" 
-    onclick="selectOrderType('Takeaway')">
-    Takeaway
-</button>
+<!-- =========================
+     FOOTER
+========================== -->
 
-            </div>
+<footer>
 
+    <p>
+        © 2026 Al Kamal Croissant.
+    </p>
 
-
-            <!-- =========================
-                 ADDRESS
-                 ONLY FOR DELIVERY
-            ========================== -->
-
-            <input
-                type="text"
-                id="customer-address"
-                placeholder="العنوان"
-                style="display: none;">
+</footer>
 
 
+<script src="cart.js"></script>
 
-            <!-- =========================
-                 NOTES
-                 ALWAYS VISIBLE
-            ========================== -->
-
-            <input
-                type="text"
-                id="customer-notes"
-                placeholder="الملاحظات (اختياري)">
-
-
-
-            <!-- =========================
-                 SEND ORDER
-            ========================== -->
-
-            <button
-                class="place-order"
-                onclick="placeOrder()">
-
-                Done & Send Order to WhatsApp
-
-            </button>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer>
-
-        <p>
-            © 2026 Al Kamal Croissant.
-        </p>
-
-    </footer>
-
-
-
-    <!-- JAVASCRIPT -->
-
-    <script src="cart.js"></script>
-
-
-</body>
-
-</html>
+</body> </html>

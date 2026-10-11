@@ -206,9 +206,7 @@ function formatPrice(price, currency) {
 
     }
 
-
-    return Number(price).toLocaleString() +
-        " L.L";
+    return Number(price).toLocaleString() + " L.L";
 
 }
 

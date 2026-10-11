@@ -28,10 +28,13 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     padding: 25px 50px;
+
     z-index: 100;
 }
 
@@ -44,15 +47,20 @@ nav {
 
 nav ul {
     list-style: none;
+
     display: flex;
+
     gap: 38px;
 }
 
 nav ul li a {
     text-decoration: none;
+
     color: #6b3f20;
+
     font-size: 18px;
     font-weight: bold;
+
     transition: 0.3s;
 }
 
@@ -68,82 +76,124 @@ nav ul li a:hover {
 .hero {
     min-height: 100vh;
     width: 100%;
+
     position: relative;
+
     overflow: hidden;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     text-align: center;
 }
 
 .background {
     position: absolute;
+
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
+
     background-image: url("images/logo.PNG");
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
     filter: blur(6px);
+
     transform: scale(1.05);
+
     z-index: 0;
 }
 
 .overlay {
     position: absolute;
+
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
+
     background: rgba(255, 244, 227, 0.30);
+
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
+
     z-index: 2;
+
     color: #6b3f20;
+
     display: flex;
     flex-direction: column;
+
     align-items: center;
     justify-content: center;
+
     transform: translateY(-55px);
+
     padding: 20px;
 }
 
 .hero-content h1 {
     font-size: 64px;
+
     font-weight: 900;
+
     letter-spacing: 2px;
+
     margin-bottom: 15px;
-    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.7);
+
+    text-shadow:
+        2px 2px 5px rgba(255, 255, 255, 0.7);
 }
 
 .hero-content p {
     font-size: 25px;
+
     font-weight: 500;
+
     letter-spacing: 1px;
+
     margin-bottom: 30px;
-    text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.8);
+
+    text-shadow:
+        1px 1px 4px rgba(255, 255, 255, 0.8);
 }
 
 .button {
     display: inline-block;
+
     background-color: #c98b4a;
+
     color: white;
+
     text-decoration: none;
+
     padding: 15px 34px;
+
     border-radius: 8px;
+
     font-size: 18px;
+
     font-weight: bold;
+
     transition: 0.3s;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .button:hover {
     background-color: #a96d35;
+
     transform: translateY(-3px);
 }
 
@@ -154,68 +204,96 @@ nav ul li a:hover {
 
 .items-page {
     min-height: 100vh;
+
     background:
         linear-gradient(
             rgba(255, 244, 227, 0.88),
             rgba(255, 244, 227, 0.88)
         ),
         url("images/logo.PNG");
+
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+
     color: #6b3f20;
 }
 
 .items-section {
     min-height: 100vh;
+
     padding: 120px 40px 50px;
+
     text-align: center;
 }
 
 .items-section h1 {
     font-size: 42px;
+
     font-weight: 800;
+
     color: #6b3f20;
+
     margin-bottom: 12px;
 }
 
 .items-subtitle {
     font-size: 19px;
+
     color: #805333;
+
     margin-bottom: 32px;
 }
 
 .categories {
     max-width: 1000px;
+
     margin: 0 auto;
+
     display: grid;
+
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+
+    gap: 25px;
 }
 
 .category-card {
     position: relative;
+
     height: 260px;
+
     overflow: hidden;
+
     border-radius: 16px;
+
     text-decoration: none;
+
     display: block;
-    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.16);
+
+    box-shadow:
+        0 7px 18px rgba(0, 0, 0, 0.16);
+
     transition: 0.35s;
 }
 
 .category-card img {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
     display: block;
+
     transition: 0.5s;
 }
 
 .category-card::after {
     content: "";
+
     position: absolute;
+
     inset: 0;
+
     background: linear-gradient(
         to top,
         rgba(0, 0, 0, 0.65),
@@ -225,16 +303,22 @@ nav ul li a:hover {
 
 .category-overlay {
     position: absolute;
+
     bottom: 20px;
     left: 0;
+
     width: 100%;
+
     z-index: 2;
+
     color: white;
+
     padding: 0 15px;
 }
 
 .category-overlay h2 {
     font-size: 27px;
+
     margin-bottom: 5px;
 }
 
@@ -242,10 +326,13 @@ nav ul li a:hover {
     font-size: 14px;
 }
 
-.category-card:nth-child(3) {
-    grid-column: 1 / 3;
-    width: 48%;
-    justify-self: center;
+.category-card:nth-child(3),
+.category-card:nth-child(4) {
+    grid-column: auto;
+
+    width: 100%;
+
+    justify-self: stretch;
 }
 
 .category-card:hover {
@@ -263,40 +350,61 @@ nav ul li a:hover {
 
 .croissants-page {
     min-height: 100vh;
+
     background:
         linear-gradient(
             rgba(255, 244, 227, 0.92),
             rgba(255, 244, 227, 0.92)
         ),
         url("images/logo.PNG");
+
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+
     color: #6b3f20;
 }
 
 .croissants-section {
     min-height: 100vh;
+
     padding: 120px 50px 70px;
+
     text-align: center;
 }
 
 .croissants-section > h1 {
     font-size: 42px;
+
     font-weight: 800;
+
     color: #6b3f20;
+
     margin-bottom: 25px;
 }
 
+
+/* =====================================================
+   CROISSANT OCCASION
+===================================================== */
+
 .occasion-banner {
     width: 100%;
+
     max-width: 950px;
+
     margin: 0 auto 40px;
+
     padding: 18px 25px;
+
     background: rgba(255, 255, 255, 0.72);
+
     border: 1px solid rgba(201, 139, 74, 0.30);
+
     border-radius: 16px;
-    box-shadow: 0 6px 18px rgba(107, 63, 32, 0.08);
+
+    box-shadow:
+        0 6px 18px rgba(107, 63, 32, 0.08);
 }
 
 .occasion-banner h2,
@@ -311,8 +419,10 @@ nav ul li a:hover {
 
 .occasion-content {
     display: flex;
+
     align-items: center;
     justify-content: center;
+
     gap: 18px;
 }
 
@@ -320,36 +430,59 @@ nav ul li a:hover {
     font-size: 22px;
 }
 
+
+/* =====================================================
+   CROISSANT PRODUCTS
+===================================================== */
+
 .croissants-grid {
     max-width: 1200px;
+
     margin: 0 auto;
+
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 30px;
 }
 
 .croissant-card {
     background: rgba(255, 255, 255, 0.90);
+
     border-radius: 18px;
+
     overflow: hidden;
-    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.14);
+
+    box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.14);
+
     transition: 0.35s;
+
     padding-bottom: 18px;
 }
 
 .croissant-card img {
     width: 100%;
+
     height: 270px;
+
     object-fit: contain;
+
     display: block;
+
     transition: 0.5s;
 }
 
 .croissant-card h2 {
     font-size: 20px;
+
     color: #6b3f20;
+
     margin: 18px 10px 8px;
+
     line-height: 1.7;
+
     direction: rtl;
 }
 
@@ -359,7 +492,9 @@ nav ul li a:hover {
 
 .croissant-card p {
     font-size: 16px;
+
     font-weight: 600;
+
     color: #a96d35;
 }
 
@@ -373,10 +508,15 @@ nav ul li a:hover {
 
 .ingredients {
     font-size: 13px !important;
+
     font-weight: 500 !important;
+
     color: #805333 !important;
+
     margin: 0 10px 8px !important;
+
     line-height: 1.7;
+
     direction: rtl;
 }
 
@@ -387,58 +527,81 @@ nav ul li a:hover {
 
 .pizza-page {
     min-height: 100vh;
+
     background:
         linear-gradient(
             rgba(255, 244, 227, 0.92),
             rgba(255, 244, 227, 0.92)
         ),
         url("images/logo.PNG");
+
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+
     color: #6b3f20;
 }
 
 .pizza-section {
     min-height: 100vh;
+
     padding: 120px 50px 70px;
+
     text-align: center;
 }
 
 .pizza-section > h1 {
     font-size: 42px;
+
     color: #6b3f20;
+
     margin-bottom: 25px;
 }
 
 .pizza-grid {
     max-width: 1200px;
+
     margin: 0 auto;
+
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 30px;
 }
 
 .pizza-card {
     background: rgba(255, 255, 255, 0.90);
+
     border-radius: 18px;
+
     overflow: hidden;
-    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.14);
+
+    box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.14);
+
     padding-bottom: 22px;
+
     transition: 0.35s;
 }
 
 .pizza-card img {
     width: 100%;
+
     height: 270px;
+
     object-fit: contain;
+
     display: block;
 }
 
 .pizza-card h2 {
     font-size: 20px;
+
     color: #6b3f20;
+
     margin: 18px 10px 8px;
+
     direction: rtl;
 }
 
@@ -448,7 +611,9 @@ nav ul li a:hover {
 
 .pizza-prices p {
     font-size: 16px;
+
     color: #a96d35;
+
     margin: 5px 0;
 }
 
@@ -463,61 +628,83 @@ nav ul li a:hover {
 
 .drinks-page {
     min-height: 100vh;
+
     background:
         linear-gradient(
             rgba(255, 244, 227, 0.92),
             rgba(255, 244, 227, 0.92)
         ),
         url("images/logo.PNG");
+
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+
     color: #6b3f20;
 }
 
 .drinks-section {
     min-height: 100vh;
+
     padding: 120px 50px 70px;
+
     text-align: center;
 }
 
 .drinks-section > h1 {
     font-size: 42px;
+
     color: #6b3f20;
+
     margin-bottom: 40px;
 }
 
 .drinks-grid {
     max-width: 1000px;
+
     margin: 0 auto;
+
     display: grid;
+
     grid-template-columns: repeat(2, 1fr);
+
     gap: 30px;
 }
 
 .drink-card {
     background: rgba(255, 255, 255, 0.90);
+
     border-radius: 18px;
+
     overflow: hidden;
-    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.14);
+
+    box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.14);
+
     padding-bottom: 18px;
 }
 
 .drink-card img {
     width: 100%;
+
     height: 280px;
+
     object-fit: contain;
+
     padding: 15px;
 }
 
 .drink-card h2 {
     font-size: 21px;
+
     color: #6b3f20;
+
     margin: 12px 10px 8px;
 }
 
 .drink-card p {
     font-size: 16px;
+
     color: #a96d35;
 }
 
@@ -528,43 +715,55 @@ nav ul li a:hover {
 
 .contact-page {
     min-height: 100vh;
+
     background:
         linear-gradient(
             rgba(255, 244, 227, 0.94),
             rgba(255, 244, 227, 0.94)
         ),
         url("images/logo.PNG");
+
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+
     color: #6b3f20;
 }
 
 .contact-hero {
     min-height: 390px;
+
     width: 100%;
+
     background:
         linear-gradient(
             rgba(107, 63, 32, 0.48),
             rgba(107, 63, 32, 0.48)
         ),
         url("images/shop.jpg");
+
     background-size: cover;
     background-position: center;
+
     display: flex;
+
     align-items: center;
     justify-content: center;
+
     text-align: center;
+
     padding: 120px 20px 50px;
 }
 
 .contact-hero-content {
     max-width: 750px;
+
     color: white;
 }
 
 .contact-hero-content h1 {
     font-size: 58px;
+
     margin-bottom: 12px;
 }
 
@@ -574,40 +773,62 @@ nav ul li a:hover {
 
 .contact-info {
     width: 90%;
+
     max-width: 1200px;
+
     margin: 65px auto 75px;
+
     display: grid;
+
     grid-template-columns: repeat(4, 1fr);
+
     gap: 22px;
 }
 
 .contact-card {
     min-height: 190px;
+
     background: rgba(255, 255, 255, 0.92);
+
     border-radius: 18px;
+
     padding: 28px 18px;
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     justify-content: center;
+
     text-align: center;
-    box-shadow: 0 7px 20px rgba(107, 63, 32, 0.10);
+
+    box-shadow:
+        0 7px 20px rgba(107, 63, 32, 0.10);
 }
 
 .contact-icon {
     width: 58px;
     height: 58px;
+
     display: flex;
+
     align-items: center;
     justify-content: center;
+
     background: rgba(201, 139, 74, 0.12);
+
     border-radius: 50%;
+
     font-size: 27px;
+
     margin-bottom: 15px;
 }
 
 .contact-card h3 {
     color: #6b3f20;
+
     margin-bottom: 9px;
 }
 
@@ -617,35 +838,49 @@ nav ul li a:hover {
 
 .contact-main {
     width: 90%;
+
     max-width: 1200px;
+
     margin: 0 auto 90px;
+
     display: grid;
+
     grid-template-columns: 1fr 1fr;
+
     gap: 50px;
 }
 
 .contact-image {
     width: 100%;
+
     height: 560px;
 }
 
 .contact-image img {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
     border-radius: 22px;
 }
 
 .contact-form {
     background: rgba(255, 255, 255, 0.94);
+
     padding: 42px;
+
     border-radius: 22px;
-    box-shadow: 0 10px 28px rgba(107, 63, 32, 0.10);
+
+    box-shadow:
+        0 10px 28px rgba(107, 63, 32, 0.10);
 }
 
 .contact-form h2 {
     color: #6b3f20;
+
     font-size: 34px;
+
     margin-bottom: 10px;
 }
 
@@ -655,9 +890,13 @@ nav ul li a:hover {
 
 .input-group label {
     display: block;
+
     color: #6b3f20;
+
     font-size: 14px;
+
     font-weight: bold;
+
     margin-bottom: 7px;
 }
 
@@ -665,12 +904,19 @@ nav ul li a:hover {
 .input-group select,
 .input-group textarea {
     width: 100%;
+
     padding: 13px 15px;
+
     background: #fffaf4;
+
     color: #6b3f20;
+
     border: 1px solid #e2d3c5;
+
     border-radius: 9px;
+
     outline: none;
+
     font-size: 14px;
 }
 
@@ -685,42 +931,61 @@ nav ul li a:hover {
 
 .about-page {
     position: relative;
+
     min-height: 100vh;
+
     background: #fff4e3;
+
     color: #6b3f20;
+
     overflow-x: hidden;
 }
 
 .about-background {
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
+
     background-image: url("images/logo.PNG");
+
     background-size: cover;
     background-position: center;
+
     filter: blur(7px);
+
     transform: scale(1.06);
+
     z-index: -2;
 }
 
 .about-overlay {
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
+
     background: rgba(255, 244, 227, 0.88);
+
     z-index: -1;
 }
 
 .about-hero {
     min-height: 430px;
+
     display: flex;
+
     align-items: center;
     justify-content: center;
+
     text-align: center;
+
     padding: 140px 20px 70px;
 }
 
@@ -730,64 +995,90 @@ nav ul li a:hover {
 
 .about-hero-content h1 {
     color: #6b3f20;
+
     font-size: 58px;
+
     margin-bottom: 15px;
 }
 
 .about-hero-content p {
     color: #c98b4a;
+
     font-size: 27px;
+
     font-weight: 700;
 }
 
 .about-hero-content span {
     display: block;
+
     color: #805333;
+
     font-size: 17px;
+
     line-height: 1.8;
+
     max-width: 650px;
+
     margin: auto;
 }
 
 .about-story {
     width: 90%;
+
     max-width: 1150px;
+
     margin: 30px auto 90px;
+
     display: grid;
+
     grid-template-columns: 1fr 1fr;
+
     gap: 55px;
+
     align-items: center;
 }
 
 .about-story-image {
     width: 100%;
+
     height: 450px;
+
     overflow: hidden;
+
     border-radius: 22px;
 }
 
 .about-story-image img {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
 }
 
 .about-story-content h2 {
     color: #6b3f20;
+
     font-size: 38px;
+
     margin-bottom: 20px;
 }
 
 .about-story-content p {
     color: #805333;
+
     font-size: 16px;
+
     line-height: 1.8;
 }
 
 .about-section {
     width: 90%;
+
     max-width: 1200px;
+
     margin: 0 auto 90px;
+
     text-align: center;
 }
 
@@ -797,6 +1088,7 @@ nav ul li a:hover {
 
 .about-title h2 {
     color: #6b3f20;
+
     font-size: 38px;
 }
 
@@ -805,129 +1097,185 @@ nav ul li a:hover {
 }
 
 .about-cards {
-    max-width: 1100px;
+    max-width: 1200px;
+
     margin: 0 auto;
+
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns: repeat(4, 1fr);
+
     gap: 25px;
 }
 
 .about-card {
     background: rgba(255, 255, 255, 0.92);
+
     padding: 32px 25px;
+
     min-height: 230px;
+
     border-radius: 18px;
-    box-shadow: 0 7px 20px rgba(107, 63, 32, 0.10);
+
+    box-shadow:
+        0 7px 20px rgba(107, 63, 32, 0.10);
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     justify-content: center;
+
     text-align: center;
 }
 
 .about-icon {
     width: 62px;
     height: 62px;
+
     margin: 0 auto 17px;
+
     display: flex;
+
     align-items: center;
     justify-content: center;
+
     background: rgba(201, 139, 74, 0.12);
+
     border-radius: 50%;
+
     font-size: 29px;
 }
 
 .about-card h3 {
     color: #6b3f20;
+
     margin-bottom: 10px;
 }
 
 .about-card p {
     color: #805333;
+
     font-size: 14px;
+
     line-height: 1.7;
+
     max-width: 260px;
 }
 
 .why-us {
     width: 100%;
+
     padding: 80px 5%;
+
     background: rgba(255, 244, 227, 0.75);
+
     text-align: center;
 }
 
 .why-cards {
     max-width: 1100px;
+
     margin: auto;
+
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 25px;
 }
 
 .why-card {
     background: rgba(255, 255, 255, 0.90);
+
     padding: 32px 25px;
+
     border-radius: 18px;
-    box-shadow: 0 7px 20px rgba(107, 63, 32, 0.09);
+
+    box-shadow:
+        0 7px 20px rgba(107, 63, 32, 0.09);
 }
 
 .why-icon {
     font-size: 32px;
+
     margin-bottom: 15px;
 }
 
 .why-card h3 {
     color: #6b3f20;
+
     margin-bottom: 10px;
 }
 
 .why-card p {
     color: #805333;
+
     font-size: 14px;
+
     line-height: 1.7;
 }
 
 .about-mission {
     width: 90%;
+
     max-width: 900px;
+
     margin: 85px auto;
+
     text-align: center;
 }
 
 .mission-content {
     background: rgba(255, 255, 255, 0.92);
+
     padding: 55px 45px;
+
     border-radius: 22px;
-    box-shadow: 0 10px 28px rgba(107, 63, 32, 0.10);
+
+    box-shadow:
+        0 10px 28px rgba(107, 63, 32, 0.10);
 }
 
 .mission-content h2 {
     color: #6b3f20;
+
     font-size: 36px;
+
     margin-bottom: 18px;
 }
 
 .mission-content p {
     color: #805333;
+
     font-size: 17px;
+
     line-height: 1.8;
 }
 
 .about-cta {
     width: 100%;
+
     padding: 70px 20px;
+
     text-align: center;
+
     background: rgba(255, 244, 227, 0.98);
 }
 
 .about-cta h2 {
     color: #6b3f20;
+
     font-size: 35px;
+
     margin-bottom: 12px;
 }
 
 .about-cta p {
     color: #805333;
+
     margin-bottom: 25px;
 }
 
@@ -938,14 +1286,20 @@ nav ul li a:hover {
 
 footer {
     width: 100%;
+
     background: #fff4e3;
+
     padding: 32px 20px 25px;
+
     text-align: center;
-    border-top: 1px solid rgba(201, 139, 74, 0.20);
+
+    border-top:
+        1px solid rgba(201, 139, 74, 0.20);
 }
 
 footer p {
     color: #a96d35;
+
     font-size: 13px;
 }
 
@@ -956,33 +1310,45 @@ footer p {
 
 .instagram-section {
     padding: 60px 20px;
+
     text-align: center;
+
     background: #fff4e3;
 }
 
 .instagram-content {
     max-width: 750px;
+
     margin: auto;
 }
 
 .instagram-content h2 {
     color: #6b3f20;
+
     font-size: 30px;
+
     margin-bottom: 15px;
 }
 
 .instagram-content p {
     color: #805333;
+
     margin-bottom: 25px;
 }
 
 .instagram-button {
     display: inline-block;
+
     padding: 13px 28px;
+
     background: #c98b4a;
+
     color: white;
+
     text-decoration: none;
+
     border-radius: 25px;
+
     font-weight: 600;
 }
 
@@ -993,13 +1359,21 @@ footer p {
 
 .add-to-cart {
     margin-top: 12px;
+
     padding: 10px 20px;
+
     border: none;
+
     border-radius: 25px;
+
     background: #c98b4a;
+
     color: white;
+
     font-size: 14px;
+
     font-weight: 600;
+
     cursor: pointer;
 }
 
@@ -1010,16 +1384,26 @@ footer p {
 
 #cart-count {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
+
     min-width: 20px;
+
     height: 20px;
+
     padding: 0 5px;
+
     margin-left: 5px;
+
     background: #c98b4a;
+
     color: white;
+
     border-radius: 50%;
+
     font-size: 11px;
+
     font-weight: bold;
 }
 
@@ -1030,28 +1414,38 @@ footer p {
 
 .cart-notification {
     position: fixed;
+
     top: 90px;
     right: 25px;
+
     z-index: 9999;
+
     padding: 14px 22px;
+
     background: #f3e3c3;
+
     color: #5a351d;
+
     border: 1px solid #d8bd91;
+
     border-radius: 10px;
+
     opacity: 0;
+
     transform: translateY(-10px);
+
     transition: 0.3s;
 }
 
 .cart-notification.show {
     opacity: 1;
+
     transform: translateY(0);
 }
 
 
 /* =====================================================
    CART PAGE
-   هذا هو الإصلاح الأساسي للمشكلة
 ===================================================== */
 
 .cart-page {
@@ -1065,7 +1459,9 @@ footer p {
         url("images/logo.PNG");
 
     background-size: cover;
+
     background-position: center;
+
     background-attachment: fixed;
 
     color: #6b3f20;
@@ -1074,13 +1470,13 @@ footer p {
 }
 
 
-/*
-   Navbar absolute
-   لذلك نترك مساحة فوق الـ Cart
-*/
+/* =====================================================
+   CART SECTION
+===================================================== */
 
 .cart-page .cart-section {
     width: 100%;
+
     max-width: 900px;
 
     margin: 0 auto;
@@ -1099,9 +1495,11 @@ footer p {
 
 .cart-page .cart-section h1 {
     position: relative;
+
     z-index: 1;
 
     font-size: 38px;
+
     line-height: 1.2;
 
     margin: 0 0 35px;
@@ -1118,13 +1516,22 @@ footer p {
 
 .cart-page #cart-items {
     display: flex;
+
     flex-direction: column;
+
     gap: 15px;
 }
 
+
+/* =====================================================
+   CART ITEM
+===================================================== */
+
 .cart-page .cart-item {
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     width: 100%;
@@ -1141,36 +1548,121 @@ footer p {
     box-sizing: border-box;
 }
 
-.cart-page .cart-item span {
+
+/* =====================================================
+   CART ITEM INFO
+===================================================== */
+
+.cart-page .cart-item-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    direction: ltr;
+}
+
+
+/* =====================================================
+   PRODUCT NAME
+===================================================== */
+
+.cart-page .cart-item-name {
+    order: 1;
+
+    direction: rtl;
+
     color: #6b3f20;
+
     font-weight: 600;
 }
 
 
 /* =====================================================
-   REMOVE
+   PRODUCT PRICE
 ===================================================== */
 
-.cart-page .cart-item button {
+.cart-page .cart-item-price {
+    order: 2;
+
+    direction: ltr;
+
+    color: #a96d35;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   QUANTITY CONTROLS
+===================================================== */
+
+.cart-page .quantity-controls {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+}
+
+
+/* =====================================================
+   QUANTITY NUMBER
+===================================================== */
+
+.cart-page .quantity-number {
+    min-width: 30px;
+
+    text-align: center;
+
+    color: #6b3f20;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   QUANTITY BUTTONS
+===================================================== */
+
+.cart-page .quantity-btn {
+    width: 32px;
+
+    height: 32px;
+
+    padding: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
     background: #f3e3c3;
+
     color: #5a351d;
 
     border: 1px solid #d8bd91;
-
-    padding: 8px 14px;
 
     border-radius: 7px;
 
     cursor: pointer;
 
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 18px;
+
+    font-weight: bold;
 
     transition: 0.3s;
 }
 
-.cart-page .cart-item button:hover {
+.cart-page .quantity-btn:hover {
     background: #e8d1a8;
+
     color: #4a2c18;
 }
 
@@ -1205,7 +1697,8 @@ footer p {
 
     border-radius: 12px;
 
-    border: 1px solid rgba(216, 189, 145, 0.35);
+    border:
+        1px solid rgba(216, 189, 145, 0.35);
 }
 
 .cart-page .cart-total h2 {
@@ -1254,7 +1747,9 @@ footer p {
 
 .cart-page .complete-order:hover {
     background: #e8d1a8;
+
     color: #4a2c18;
+
     transform: translateY(-2px);
 }
 
@@ -1397,7 +1892,492 @@ footer p {
 
 .cart-page .place-order:hover {
     background: #e8d1a8;
+
     color: #4a2c18;
+}
+
+
+/* =====================================================
+   OPENING HOURS + DELIVERY
+===================================================== */
+
+.opening-hours {
+    width: 100%;
+
+    padding: 80px 20px;
+
+    background: #fff4e3;
+
+    text-align: center;
+}
+
+.hours-card {
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 45px 50px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border:
+        1px solid rgba(201, 139, 74, 0.20);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 12px 30px rgba(107, 63, 32, 0.10);
+}
+
+.hours-card h2 {
+    color: #6b3f20;
+
+    font-size: 36px;
+
+    margin-bottom: 12px;
+}
+
+.hours-subtitle {
+    color: #805333;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+}
+
+.hours-info {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.time-row {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 22px 15px;
+
+    background: #fffaf4;
+
+    border: 1px solid #ead8c3;
+
+    border-radius: 16px;
+
+    transition: 0.3s;
+}
+
+.time-row:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 7px 18px rgba(107, 63, 32, 0.10);
+}
+
+.time-row span:first-child {
+    color: #c98b4a;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+.time-row span:last-child {
+    color: #6b3f20;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   DELIVERY
+===================================================== */
+
+.delivery-section {
+    width: 100%;
+
+    padding: 30px 20px 80px;
+
+    background: #fff4e3;
+}
+
+.delivery-card {
+    max-width: 900px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 32px 40px;
+
+    background: linear-gradient(
+        135deg,
+        #f3e3c3,
+        #fffaf4
+    );
+
+    border: 1px solid #dfc49e;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 10px 28px rgba(107, 63, 32, 0.10);
+
+    transition: 0.3s;
+}
+
+.delivery-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 32px rgba(107, 63, 32, 0.14);
+}
+
+.delivery-icon {
+    min-width: 75px;
+
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #c98b4a;
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 35px;
+
+    box-shadow:
+        0 6px 15px rgba(201, 139, 74, 0.25);
+}
+
+.delivery-content {
+    text-align: left;
+
+    flex: 1;
+}
+
+.delivery-badge {
+    display: inline-block;
+
+    padding: 6px 14px;
+
+    background: #fff;
+
+    color: #a96d35;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+.delivery-content h2 {
+    color: #6b3f20;
+
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+.delivery-content p {
+    color: #805333;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    margin: 0;
+}
+
+
+/* =====================================================
+   LOCATION
+===================================================== */
+
+.location-section {
+    padding: 70px 20px;
+
+    text-align: center;
+
+    background: rgba(255, 244, 227, 0.90);
+}
+
+.location-content {
+    max-width: 800px;
+
+    margin: auto;
+}
+
+.location-content h2 {
+    color: #6b3f20;
+
+    font-size: 32px;
+
+    margin-bottom: 12px;
+
+    font-weight: bold;
+}
+
+.location-content p {
+    color: #704528;
+
+    font-size: 19px;
+
+    margin-bottom: 25px;
+}
+
+.location-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 14px 28px;
+
+    background: #f3e3c3;
+
+    color: #5a351d;
+
+    border: 1px solid #d8bd91;
+
+    border-radius: 10px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+.location-button i {
+    font-size: 20px;
+}
+
+.location-button:hover {
+    background: #c98b4a;
+
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   DONUTS PAGE
+===================================================== */
+
+.product-page {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(255, 244, 227, 0.88),
+            rgba(255, 244, 227, 0.88)
+        ),
+        url("images/logo.PNG");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+    color: #6b3f20;
+}
+
+.products-section {
+    min-height: 100vh;
+
+    padding: 120px 40px 60px;
+
+    text-align: center;
+}
+
+.products-section h1 {
+    font-size: 42px;
+
+    font-weight: 800;
+
+    color: #6b3f20;
+
+    margin-bottom: 12px;
+}
+
+.products-subtitle {
+    font-size: 19px;
+
+    color: #805333;
+
+    margin-bottom: 35px;
+}
+
+.products-grid {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.product-card {
+    background: rgba(255, 255, 255, 0.94);
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 7px 20px rgba(107, 63, 32, 0.14);
+
+    transition: 0.3s;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 12px 25px rgba(107, 63, 32, 0.20);
+}
+
+.product-card img {
+    width: 100%;
+
+    height: 270px;
+
+    object-fit: contain;
+
+    display: block;
+
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 22px;
+
+    color: #6b3f20;
+
+    margin: 8px 0 12px;
+}
+
+.product-price {
+    font-size: 19px;
+
+    font-weight: bold;
+
+    color: #a96d35;
+
+    margin-bottom: 18px;
+}
+
+.product-card button {
+    border: none;
+
+    background: #c98b4a;
+
+    color: white;
+
+    padding: 11px 24px;
+
+    border-radius: 25px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.product-card button:hover {
+    background: #a96d35;
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   DONUTS SPECIAL OCCASIONS
+===================================================== */
+
+.donuts-occasion {
+    width: 100%;
+
+    max-width: 950px;
+
+    margin: 0 auto 40px;
+
+    padding: 18px 25px;
+
+    background: rgba(255, 255, 255, 0.72);
+
+    border: 1px solid rgba(201, 139, 74, 0.30);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 6px 18px rgba(107, 63, 32, 0.08);
+
+    text-align: center;
+}
+
+.donuts-occasion h2 {
+    color: #6b3f20;
+
+    font-size: 24px;
+
+    margin-bottom: 10px;
+}
+
+.donuts-occasion p {
+    color: #a96d35;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    margin: 0;
 }
 
 
@@ -1419,27 +2399,39 @@ footer p {
         font-size: 15px;
     }
 
+
     .croissants-grid,
     .pizza-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
+
     .contact-info {
         grid-template-columns: repeat(2, 1fr);
     }
 
+
     .contact-main {
         grid-template-columns: 1fr;
+
         max-width: 750px;
     }
+
 
     .about-story {
         grid-template-columns: 1fr;
+
         max-width: 750px;
     }
 
+
     .about-cards,
     .why-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .products-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -1465,6 +2457,7 @@ footer p {
 
     .logo {
         font-size: 21px;
+
         text-align: center;
     }
 
@@ -1484,20 +2477,26 @@ footer p {
 
     nav ul li a {
         font-size: 13px;
+
         white-space: nowrap;
     }
 
 
-    /* HOME */
+    /* =================================================
+       HOME
+    ================================================= */
 
     .hero-content {
         width: 100%;
+
         padding: 20px 15px;
+
         transform: translateY(-20px);
     }
 
     .hero-content h1 {
         font-size: 40px;
+
         line-height: 1.15;
     }
 
@@ -1506,7 +2505,9 @@ footer p {
     }
 
 
-    /* ITEMS */
+    /* =================================================
+       ITEMS
+    ================================================= */
 
     .items-section {
         padding: 120px 15px 50px;
@@ -1518,16 +2519,21 @@ footer p {
 
     .category-card {
         width: 100%;
+
         height: 230px;
     }
 
-    .category-card:nth-child(3) {
+    .category-card:nth-child(3),
+    .category-card:nth-child(4) {
         grid-column: auto;
+
         width: 100%;
     }
 
 
-    /* CROISSANTS */
+    /* =================================================
+       CROISSANTS
+    ================================================= */
 
     .croissants-section {
         padding: 120px 15px 50px;
@@ -1539,6 +2545,7 @@ footer p {
 
     .croissants-grid {
         grid-template-columns: 1fr;
+
         gap: 25px;
     }
 
@@ -1547,7 +2554,9 @@ footer p {
     }
 
 
-    /* PIZZA */
+    /* =================================================
+       PIZZA
+    ================================================= */
 
     .pizza-section {
         padding: 120px 15px 50px;
@@ -1559,6 +2568,7 @@ footer p {
 
     .pizza-grid {
         grid-template-columns: 1fr;
+
         gap: 25px;
     }
 
@@ -1567,7 +2577,9 @@ footer p {
     }
 
 
-    /* DRINKS */
+    /* =================================================
+       DRINKS
+    ================================================= */
 
     .drinks-section {
         padding: 120px 15px 50px;
@@ -1582,10 +2594,13 @@ footer p {
     }
 
 
-    /* ABOUT */
+    /* =================================================
+       ABOUT
+    ================================================= */
 
     .about-hero {
         min-height: 380px;
+
         padding: 130px 15px 50px;
     }
 
@@ -1599,7 +2614,9 @@ footer p {
 
     .about-story {
         width: 92%;
+
         grid-template-columns: 1fr;
+
         gap: 30px;
     }
 
@@ -1616,10 +2633,13 @@ footer p {
     }
 
 
-    /* CONTACT */
+    /* =================================================
+       CONTACT
+    ================================================= */
 
     .contact-hero {
         min-height: 360px;
+
         padding: 130px 15px 50px;
     }
 
@@ -1629,11 +2649,13 @@ footer p {
 
     .contact-info {
         width: 92%;
+
         grid-template-columns: 1fr;
     }
 
     .contact-main {
         width: 92%;
+
         grid-template-columns: 1fr;
     }
 
@@ -1647,21 +2669,15 @@ footer p {
 
 
     /* =================================================
-       CART MOBILE — IMPORTANT
+       CART
     ================================================= */
 
     .cart-page .cart-section {
         width: 100%;
 
-        /*
-           لأن الـNavbar على الموبايل
-           يأخذ سطرين
-        */
         padding: 155px 15px 50px;
 
         margin: 0 auto;
-
-        box-sizing: border-box;
     }
 
     .cart-page .cart-section h1 {
@@ -1673,16 +2689,61 @@ footer p {
     .cart-page .cart-item {
         flex-direction: column;
 
-        gap: 10px;
+        gap: 15px;
 
         text-align: center;
 
         padding: 18px 15px;
     }
 
-    .cart-page .cart-item button {
+
+    /* NAME + PRICE */
+
+    .cart-page .cart-item-info {
         width: 100%;
+
+        display: flex;
+
+        flex-direction: row;
+
+        align-items: center;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 8px;
+
+        direction: ltr;
     }
+
+    .cart-page .cart-item-name {
+        order: 1;
+
+        direction: rtl;
+    }
+
+    .cart-page .cart-item-price {
+        order: 2;
+
+        direction: ltr;
+    }
+
+
+    /* QUANTITY */
+
+    .cart-page .quantity-controls {
+        justify-content: center;
+    }
+
+    .cart-page .quantity-btn {
+        width: 34px;
+
+        height: 34px;
+    }
+
+
+    /* ORDER TYPE */
 
     .cart-page .order-type {
         flex-direction: column;
@@ -1694,6 +2755,7 @@ footer p {
         width: 100%;
     }
 
+
     .cart-page .customer-form {
         padding: 20px;
     }
@@ -1702,8 +2764,12 @@ footer p {
         width: 100%;
     }
 
+
+    /* NOTIFICATION */
+
     .cart-notification {
         left: 15px;
+
         right: 15px;
 
         top: 110px;
@@ -1712,7 +2778,148 @@ footer p {
     }
 
 
-    /* FOOTER */
+    /* =================================================
+       OPENING HOURS
+    ================================================= */
+
+    .opening-hours {
+        padding: 55px 15px;
+    }
+
+    .hours-card {
+        padding: 30px 20px;
+
+        border-radius: 20px;
+    }
+
+    .hours-card h2 {
+        font-size: 29px;
+    }
+
+    .hours-subtitle {
+        font-size: 14px;
+    }
+
+    .hours-info {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .time-row {
+        padding: 18px 12px;
+    }
+
+
+    /* =================================================
+       DELIVERY
+    ================================================= */
+
+    .delivery-section {
+        padding: 10px 15px 55px;
+    }
+
+    .delivery-card {
+        display: flex;
+
+        flex-direction: row;
+
+        align-items: center;
+
+        justify-content: flex-start;
+
+        padding: 25px 20px;
+
+        gap: 18px;
+    }
+
+    .delivery-icon {
+        flex-shrink: 0;
+
+        font-size: 40px;
+    }
+
+    .delivery-content {
+        text-align: right;
+
+        direction: rtl;
+    }
+
+    .delivery-content h2 {
+        font-size: 26px;
+
+        margin: 8px 0;
+    }
+
+    .delivery-content p {
+        font-size: 14px;
+
+        margin: 0;
+    }
+
+    .delivery-badge {
+        display: inline-block;
+    }
+
+
+    /* =================================================
+       DONUTS
+    ================================================= */
+
+    .products-section {
+        padding: 120px 15px 50px;
+    }
+
+    .products-section h1 {
+        font-size: 34px;
+    }
+
+    .products-subtitle {
+        font-size: 16px;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .product-card {
+        padding: 18px;
+    }
+
+    .product-card img {
+        height: 250px;
+    }
+
+    .product-card h3 {
+        font-size: 20px;
+    }
+
+    .product-price {
+        font-size: 18px;
+    }
+
+    .donuts-occasion {
+        max-width: 100%;
+
+        margin: 40px 5px 20px;
+
+        padding: 25px 18px;
+    }
+
+    .donuts-occasion h2 {
+        font-size: 23px;
+    }
+
+    .donuts-occasion p {
+        font-size: 15px;
+    }
+
+
+    /* =================================================
+       FOOTER
+    ================================================= */
 
     footer {
         padding: 28px 15px 22px;
@@ -1765,336 +2972,8 @@ footer p {
     .cart-page .cart-section h1 {
         font-size: 27px;
     }
-}
-/* =====================================================
-   OPENING HOURS + DELIVERY — HOME DESIGN
-===================================================== */
 
-.opening-hours {
-    width: 100%;
-    padding: 80px 20px;
-    background: #fff4e3;
-    text-align: center;
-}
-
-.hours-card {
-    max-width: 900px;
-    margin: auto;
-    padding: 45px 50px;
-
-    background: rgba(255, 255, 255, 0.92);
-
-    border: 1px solid rgba(201, 139, 74, 0.20);
-    border-radius: 24px;
-
-    box-shadow:
-        0 12px 30px rgba(107, 63, 32, 0.10);
-}
-
-.hours-card h2 {
-    color: #6b3f20;
-    font-size: 36px;
-    margin-bottom: 12px;
-}
-
-.hours-subtitle {
-    color: #805333;
-    font-size: 16px;
-    line-height: 1.7;
-    margin-bottom: 30px;
-}
-
-.hours-info {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-.time-row {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    padding: 22px 15px;
-
-    background: #fffaf4;
-    border: 1px solid #ead8c3;
-    border-radius: 16px;
-
-    transition: 0.3s;
-}
-
-.time-row:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 7px 18px rgba(107, 63, 32, 0.10);
-}
-
-.time-row span:first-child {
-    color: #c98b4a;
-    font-size: 17px;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-.time-row span:last-child {
-    color: #6b3f20;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-
-/* =====================================================
-   DELIVERY SECTION
-===================================================== */
-
-.delivery-section {
-    width: 100%;
-    padding: 30px 20px 80px;
-    background: #fff4e3;
-}
-
-.delivery-card {
-    max-width: 900px;
-    margin: auto;
-
-    display: flex;
-    align-items: center;
-    gap: 25px;
-
-    padding: 32px 40px;
-
-    background: linear-gradient(
-        135deg,
-        #f3e3c3,
-        #fffaf4
-    );
-
-    border: 1px solid #dfc49e;
-    border-radius: 24px;
-
-    box-shadow:
-        0 10px 28px rgba(107, 63, 32, 0.10);
-
-    transition: 0.3s;
-}
-
-.delivery-card:hover {
-    transform: translateY(-5px);
-    box-shadow:
-        0 15px 32px rgba(107, 63, 32, 0.14);
-}
-
-.delivery-icon {
-    min-width: 75px;
-    height: 75px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #c98b4a;
-    color: white;
-
-    border-radius: 50%;
-
-    font-size: 35px;
-
-    box-shadow:
-        0 6px 15px rgba(201, 139, 74, 0.25);
-}
-
-.delivery-content {
-    text-align: left;
-    flex: 1;
-}
-
-.delivery-badge {
-    display: inline-block;
-
-    padding: 6px 14px;
-
-    background: #fff;
-    color: #a96d35;
-
-    border-radius: 20px;
-
-    font-size: 13px;
-    font-weight: bold;
-
-    margin-bottom: 8px;
-}
-
-.delivery-content h2 {
-    color: #6b3f20;
-    font-size: 30px;
-    margin-bottom: 8px;
-}
-
-.delivery-content p {
-    color: #805333;
-    font-size: 16px;
-    line-height: 1.7;
-    margin: 0;
-}
-
-
-/* =====================================================
-   HOME MOBILE
-===================================================== */
-
-@media (max-width: 600px) {
-
-    .opening-hours {
-        padding: 55px 15px;
+    .cart-page .cart-item-info {
+        gap: 6px;
     }
-
-    .hours-card {
-        padding: 30px 20px;
-        border-radius: 20px;
-    }
-
-    .hours-card h2 {
-        font-size: 29px;
-    }
-
-    .hours-subtitle {
-        font-size: 14px;
-    }
-
-    .hours-info {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .time-row {
-        padding: 18px 12px;
-    }
-
-    .delivery-section {
-        padding: 10px 15px 55px;
-    }
-
-   .delivery-card {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 30px 50px;
-    gap: 30px;
-}
-
-.delivery-icon {
-    flex-shrink: 0;
-    font-size: 50px;
-}
-
-.delivery-content {
-    text-align: right;
-    direction: rtl;
-}
-
-.delivery-content h2 {
-    font-size: 32px;
-    margin: 8px 0;
-}
-
-.delivery-content p {
-    font-size: 17px;
-    margin: 0;
-}
-
-.delivery-badge {
-    display: inline-block;
-}
-
-
-/* MOBILE */
-@media (max-width: 768px) {
-
-    .delivery-card {
-        flex-direction: row;
-        justify-content: flex-start;
-        padding: 25px 20px;
-        gap: 18px;
-    }
-
-    .delivery-icon {
-        font-size: 40px;
-    }
-
-    .delivery-content {
-        text-align: right;
-    }
-
-    .delivery-content h2 {
-        font-size: 26px;
-    }
-
-    .delivery-content p {
-        font-size: 14px;
-    }
-
-}}
-/* =====================================================
-   LOCATION SECTION
-===================================================== */
-
-.location-section {
-    padding: 70px 20px;
-    text-align: center;
-    background: rgba(255, 244, 227, 0.90);
-}
-
-.location-content {
-    max-width: 800px;
-    margin: auto;
-}
-
-.location-content h2 {
-    color: #6b3f20;
-    font-size: 32px;
-    margin-bottom: 12px;
-    font-weight: bold;
-}
-
-.location-content p {
-    color: #704528;
-    font-size: 19px;
-    margin-bottom: 25px;
-}
-
-
-/* Google Maps Button */
-
-.location-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-
-    padding: 14px 28px;
-
-    background: #f3e3c3;
-    color: #5a351d;
-
-    border: 1px solid #d8bd91;
-    border-radius: 10px;
-
-    font-size: 17px;
-    font-weight: bold;
-
-    text-decoration: none;
-
-    transition: 0.3s ease;
-}
-
-.location-button i {
-    font-size: 20px;
-}
-
-.location-button:hover {
-    background: #c98b4a;
-    color: white;
-    transform: translateY(-2px);
 }
