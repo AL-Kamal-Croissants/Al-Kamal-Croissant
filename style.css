@@ -3178,3 +3178,101 @@ footer p {
         height: 120px;
     }
 }
+/* Back to Categories Button */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(180deg, #c49563 0%, #b07d4b 100%);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 22px;
+    border: 1px solid #7d5028;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.back-btn:hover {
+    background: linear-gradient(180deg, #b07d4b 0%, #9c6837 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+}
+
+.back-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}/* =====================================================
+   FINAL MOBILE FIX - KEEP ORIGINAL SIZES
+===================================================== */
+
+@media (max-width: 600px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Two cards in each row */
+
+    .categories,
+    .croissants-grid,
+    .pizza-grid,
+    .drinks-grid,
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* Keep original card sizes */
+
+    .category-card {
+        height: 260px;
+    }
+
+    .croissant-card img,
+    .pizza-card img,
+    .product-card img {
+        height: 270px;
+    }
+
+    .drink-card img {
+        height: 280px;
+    }
+
+    /* Keep original font sizes */
+
+    .croissant-card h2,
+    .pizza-card h2 {
+        font-size: 20px;
+    }
+
+    .drink-card h2 {
+        font-size: 21px;
+    }
+
+    .product-card h3 {
+        font-size: 22px;
+    }
+
+    .product-price {
+        font-size: 19px;
+    }
+
+    /* Keep original button sizes */
+
+    .add-to-cart {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .product-card button {
+        padding: 11px 24px;
+        font-size: 15px;
+    }
+}

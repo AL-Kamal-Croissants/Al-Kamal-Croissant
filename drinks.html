@@ -4,16 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Drinks - Al Kamal Croissant</title>
 
     <!-- Modern Arabic Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -22,7 +18,6 @@
 
     <!-- NAVIGATION -->
     <nav>
-
         <div class="logo">
             Al Kamal Croissant
         </div>
@@ -32,132 +27,85 @@
             <li><a href="menu.html">Items</a></li>
             <li><a href="about.html">About</a></li>
             <li>
-    <a href="cart.html">
-        🛒 Cart
-        <span id="cart-count">0</span>
-    </a>
-</li>
+                <a href="cart.html">
+                    🛒 Cart
+                    <span id="cart-count">0</span>
+                </a>
+            </li>
         </ul>
-
     </nav>
-
 
     <!-- DRINKS SECTION -->
     <section class="drinks-section">
+
+        <!-- Back Button -->
+        <button class="back-btn" onclick="history.back()">
+            ← Back to Categories
+        </button>
 
         <h1>Our Drinks</h1>
 
         <div class="drinks-grid">
 
             <!-- PEPSI -->
-           <div class="drink-card">
-
-    <img
-        src="images/pepsi.jpg"
-        alt="Pepsi">
-
-    <h2>بيبسي</h2>
-
-    <p>80,000 L.L</p>
-
-    <button
-        class="add-to-cart"
-        onclick="addToCart('بيبسي', 80000)">
-        ＋ Add to Cart
-    </button>
-
-</div>
+            <div class="drink-card">
+                <img src="images/pepsi.jpg" alt="Pepsi">
+                <h2>بيبسي</h2>
+                <p>80,000 L.L</p>
+                <button class="add-to-cart" onclick="addToCart('بيبسي', 80000)">
+                    ＋ Add to Cart
+                </button>
+            </div>
 
             <!-- 7UP -->
-           
-           <div class="drink-card">
-
-    <img
-        src="images/7up.jpg"
-        alt="7UP">
-
-    <h2>سفن اب
-    </h2>
-
-    <p>80,000 L.L</p>
-
-    <button
-        class="add-to-cart"
-        onclick="addToCart('سفن اب', 80000)">
-        ＋ Add to Cart
-    </button>
-
-</div>
             <div class="drink-card">
+                <img src="images/7up.jpg" alt="7UP">
+                <h2>سفن اب</h2>
+                <p>80,000 L.L</p>
+                <button class="add-to-cart" onclick="addToCart('سفن اب', 80000)">
+                    ＋ Add to Cart
+                </button>
+            </div>
 
-    <img
-        src="images/miranda.jpg"
-        alt="Mirinda">
-
-    <h2>ميرندا</h2>
-
-    <p>80,000 L.L</p>
-
-    <button
-        class="add-to-cart"
-        onclick="addToCart('ميرندا', 80000)">
-        ＋ Add to Cart
-    </button>
-
-</div>
-
-
+            <!-- MIRINDA -->
             <div class="drink-card">
+                <img src="images/miranda.jpg" alt="Mirinda">
+                <h2>ميرندا</h2>
+                <p>80,000 L.L</p>
+                <button class="add-to-cart" onclick="addToCart('ميرندا', 80000)">
+                    ＋ Add to Cart
+                </button>
+            </div>
 
-    <img
-        src="images/alharam.jpg"
-        alt="Pineapple Juice">
-
-    <h2>بونجس هرم</h2>
-
-    <p>30,000 L.L</p>
-
-    <button
-        class="add-to-cart"
-        onclick="addToCart('بونجس هرم', 30000)">
-        ＋ Add to Cart
-    </button>
-
-</div>
-
+            <!-- PINEAPPLE JUICE -->
+            <div class="drink-card">
+                <img src="images/alharam.jpg" alt="Pineapple Juice">
+                <h2>بونجس هرم</h2>
+                <p>30,000 L.L</p>
+                <button class="add-to-cart" onclick="addToCart('بونجس هرم', 30000)">
+                    ＋ Add to Cart
+                </button>
+            </div>
 
             <!-- WATER -->
-          <div class="drink-card">
-
-    <img
-        src="images/water.jpg"
-        alt="Water">
-
-    <h2>مياه</h2>
-
-    <p>30,000 L.L</p>
-
-    <button
-        class="add-to-cart"
-        onclick="addToCart('مياه', 30000)">
-        ＋ Add to Cart
-    </button>
-
-</div>
+            <div class="drink-card">
+                <img src="images/water.jpg" alt="Water">
+                <h2>مياه</h2>
+                <p>30,000 L.L</p>
+                <button class="add-to-cart" onclick="addToCart('مياه', 30000)">
+                    ＋ Add to Cart
+                </button>
+            </div>
 
         </div>
 
     </section>
+
     <footer>
-
         <p>© 2026 Al Kamal Croissant. </p>
-
-      
-
-
     </footer>
 
-<script src="cart.js"></script>
+    <script src="cart.js"></script>
 </body>
 
 </html>

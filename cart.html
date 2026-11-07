@@ -1,106 +1,89 @@
-<!DOCTYPE html> <html lang="en"> <head>
-<meta charset="UTF-8">
+<!DOCTYPE html>
+<html lang="en">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Al Kamal Croissant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-<title>Cart - Al Kamal Croissant</title>
+<body class="cart-page">
 
-<link rel="stylesheet" href="style.css">
-
-</head> <body class="cart-page">
 <!-- =========================
      NAVIGATION
 ========================== -->
-
 <nav>
-
     <div class="logo">
         Al Kamal Croissant
     </div>
 
     <ul>
-
         <li>
-            <a href="index.html">
-                Home
-            </a>
+            <a href="index.html">Home</a>
         </li>
-
         <li>
-            <a href="menu.html">
-                Items
-            </a>
+            <a href="menu.html">Items</a>
         </li>
-
         <li>
-            <a href="about.html">
-                About
-            </a>
+            <a href="about.html">About</a>
         </li>
-
         <li>
             <a href="cart.html" class="active">
                 🛒 Cart
                 <span id="cart-count">0</span>
             </a>
         </li>
-
     </ul>
-
 </nav>
-
 
 <!-- =========================
      CART SECTION
 ========================== -->
-
 <section class="cart-section">
+
+    <!-- Back Button -->
+    <button class="back-btn" onclick="history.back()">
+        ← Back to Categories
+    </button>
 
     <h1>
         Your Cart 🛒
     </h1>
 
-
     <!-- CART ITEMS -->
-
     <div id="cart-items"></div>
 
-
     <!-- TOTAL -->
-
-    <div class="cart-total">
-
-        <h2>
-            Total:
-            <span id="cart-total">
-                0 L.L
-            </span>
+    <div class="cart-total" style="background: #fff; border: 1px solid #e2d3c1; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 20px;">
+        <h2 style="color: #6d4c41; font-size: 1.4rem; margin-bottom: 10px;">
+            Order Total
         </h2>
-
+        <h2 id="cart-total" style="color: #b07d4b; font-size: 1.6rem; margin: 5px 0;">
+            0 L.L
+        </h2>
+        <h3 id="cart-total-usd" style="color: #b07d4b; font-size: 1.4rem; margin: 5px 0;">
+            $0.00
+        </h3>
+        <p class="currency-note" style="font-size: 0.9rem; color: #555; margin-top: 15px;">
+            Exchange Rate: 1 USD = 90,000 L.L
+        </p>
     </div>
-
 
     <!-- =========================
          COMPLETE ORDER BUTTON
     ========================== -->
-
-    <div class="complete-order-container">
-
+    <div class="complete-order-container" style="margin-top: 20px;">
         <button
             class="complete-order"
             onclick="showCustomerForm()">
-
             Complete Your Order
-
         </button>
-
     </div>
-
 
     <!-- =========================
          CUSTOMER FORM
     ========================== -->
-
     <div
         class="customer-form"
         id="customer-form"
@@ -110,90 +93,67 @@
             Customer Information
         </h2>
 
-
         <!-- NAME -->
-
         <input
             type="text"
             id="customer-name"
             placeholder="الاسم">
 
-
         <!-- =========================
              DELIVERY / PICKUP
         ========================== -->
-
         <div class="order-type">
-
             <button
                 type="button"
                 class="order-type-btn"
                 id="delivery-btn"
                 onclick="selectOrderType('Delivery')">
-
                 Delivery
-
             </button>
-
 
             <button
                 type="button"
                 class="order-type-btn"
                 id="Takeaway-btn"
                 onclick="selectOrderType('Takeaway')">
-
                 Takeaway
-
             </button>
-
         </div>
 
-
         <!-- ADDRESS -->
-
         <input
             type="text"
             id="customer-address"
             placeholder="العنوان"
             style="display: none;">
 
-
         <!-- NOTES -->
-
         <input
             type="text"
             id="customer-notes"
             placeholder="الملاحظات (اختياري)">
 
-
         <!-- SEND ORDER -->
-
         <button
             class="place-order"
             onclick="placeOrder()">
-
             Done & Send Order to WhatsApp
-
         </button>
 
     </div>
 
 </section>
 
-
 <!-- =========================
      FOOTER
 ========================== -->
-
 <footer>
-
     <p>
         © 2026 Al Kamal Croissant.
     </p>
-
 </footer>
-
 
 <script src="cart.js"></script>
 
-</body> </html>
+</body>
+</html>

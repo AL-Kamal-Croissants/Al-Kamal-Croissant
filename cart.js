@@ -1,3 +1,4 @@
+
 // =====================================================
 // CART
 // =====================================================
@@ -13,15 +14,12 @@ const isPageRefresh =
     navigationEntry &&
     navigationEntry.type === "reload";
 
-// Fallback for older browsers
 const isOldBrowserRefresh =
     performance.navigation &&
     performance.navigation.type === 1;
 
 if (isPageRefresh || isOldBrowserRefresh) {
-
     localStorage.removeItem("cart");
-
 }
 
 
@@ -50,51 +48,33 @@ function addToCart(name, price, currency = "L.L") {
 
     const existingItem =
         cart.find(function (item) {
-
             return item.name === name;
-
         });
-
 
     if (existingItem) {
-
         existingItem.quantity =
             (existingItem.quantity || 1) + 1;
-
     }
-
     else {
-
         cart.push({
-
             name: name,
-
             price: price,
-
             currency: currency,
-
             quantity: 1
-
         });
-
     }
-
 
     localStorage.setItem(
         "cart",
         JSON.stringify(cart)
     );
 
-
     updateCartCount();
-
     displayCart();
-
 
     showNotification(
         name + " added to cart ✓"
     );
-
 }
 
 
@@ -107,25 +87,15 @@ function updateCartCount() {
     const cartCount =
         document.getElementById("cart-count");
 
-
     if (cartCount) {
-
         let count = 0;
 
-
         cart.forEach(function (item) {
-
-            count +=
-                item.quantity || 1;
-
+            count += item.quantity || 1;
         });
 
-
-        cartCount.textContent =
-            count;
-
+        cartCount.textContent = count;
     }
-
 }
 
 
@@ -140,56 +110,32 @@ function showNotification(message) {
             ".cart-notification"
         );
 
-
     if (oldNotification) {
-
         oldNotification.remove();
-
     }
-
 
     const notification =
         document.createElement("div");
 
-
     notification.className =
         "cart-notification";
 
+    notification.textContent = message;
 
-    notification.textContent =
-        message;
-
-
-    document.body.appendChild(
-        notification
-    );
-
+    document.body.appendChild(notification);
 
     setTimeout(function () {
-
-        notification.classList.add(
-            "show"
-        );
-
+        notification.classList.add("show");
     }, 10);
 
-
     setTimeout(function () {
-
-        notification.classList.remove(
-            "show"
-        );
-
+        notification.classList.remove("show");
 
         setTimeout(function () {
-
             notification.remove();
-
         }, 300);
 
-
     }, 2000);
-
 }
 
 
@@ -200,14 +146,10 @@ function showNotification(message) {
 function formatPrice(price, currency) {
 
     if (currency === "$") {
-
-        return "$" +
-            Number(price).toLocaleString();
-
+        return "$" + Number(price).toLocaleString();
     }
 
     return Number(price).toLocaleString() + " L.L";
-
 }
 
 
@@ -218,14 +160,10 @@ function formatPrice(price, currency) {
 function convertToLL(price, currency) {
 
     if (currency === "$") {
-
         return Number(price) * USD_TO_LL;
-
     }
 
-
     return Number(price);
-
 }
 
 
@@ -236,23 +174,17 @@ function convertToLL(price, currency) {
 function displayCart() {
 
     const cartItems =
-        document.getElementById(
-            "cart-items"
-        );
-
+        document.getElementById("cart-items");
 
     const totalElement =
-        document.getElementById(
-            "cart-total"
-        );
+        document.getElementById("cart-total");
 
+    const totalUSDElement =
+        document.getElementById("cart-total-usd");
 
     if (!cartItems || !totalElement) {
-
         return;
-
     }
-
 
     cartItems.innerHTML = "";
 
@@ -264,22 +196,18 @@ function displayCart() {
     if (cart.length === 0) {
 
         cartItems.innerHTML = `
-
             <p class="empty-cart">
-
                 Your cart is empty 🛒
-
             </p>
-
         `;
 
+        totalElement.textContent = "0 L.L";
 
-        totalElement.textContent =
-            "0 L.L";
-
+        if (totalUSDElement) {
+            totalUSDElement.textContent = "($0.00)";
+        }
 
         return;
-
     }
 
 
@@ -296,95 +224,74 @@ function displayCart() {
 
     cart.forEach(function (item, index) {
 
-        const quantity =
-            item.quantity || 1;
-
-
-        const currency =
-            item.currency || "L.L";
-
+        const quantity = item.quantity || 1;
+        const currency = item.currency || "L.L";
 
         const itemTotal =
             Number(item.price) * quantity;
 
+        const itemTotalLL =
+            convertToLL(itemTotal, currency);
 
-        totalLL +=
-            convertToLL(
-                itemTotal,
-                currency
-            );
+        const itemTotalUSD =
+            itemTotalLL / USD_TO_LL;
 
+        totalLL += itemTotalLL;
 
         const itemDiv =
             document.createElement("div");
 
-
-        itemDiv.className =
-            "cart-item";
-
+        itemDiv.className = "cart-item";
 
         itemDiv.innerHTML = `
-
             <div class="cart-item-info">
-
                 <span class="cart-item-name">
                     ${item.name}
                 </span>
 
                 <span class="cart-item-price">
-                    ${formatPrice(
-                        itemTotal,
-                        currency
-                    )}
+                    ${itemTotalLL.toLocaleString()} L.L
+                    ($${itemTotalUSD.toFixed(2)})
                 </span>
-
             </div>
 
-
             <div class="quantity-controls">
-
                 <button
                     class="quantity-btn minus-btn"
                     onclick="decreaseQuantity(${index})">
-
                     −
-
                 </button>
-
 
                 <span class="quantity-number">
                     ${quantity}
                 </span>
 
-
                 <button
                     class="quantity-btn plus-btn"
                     onclick="increaseQuantity(${index})">
-
                     +
-
                 </button>
-
             </div>
-
         `;
 
-
-        cartItems.appendChild(
-            itemDiv
-        );
-
+        cartItems.appendChild(itemDiv);
     });
 
 
     // =========================
-    // DISPLAY TOTAL
+    // DISPLAY TOTAL (L.L & USD)
     // =========================
 
-    totalElement.textContent =
-        totalLL.toLocaleString() +
-        " L.L";
+    const totalUSD =
+        totalLL / USD_TO_LL;
 
+    totalElement.textContent =
+        totalLL.toLocaleString() + " L.L";
+
+    if (totalUSDElement) {
+        totalUSDElement.textContent =
+            "($" + totalUSD.toFixed(2) + ")";
+    }
 }
 
 
@@ -398,21 +305,16 @@ function increaseQuantity(index) {
         return;
     }
 
-
     cart[index].quantity =
         (cart[index].quantity || 1) + 1;
-
 
     localStorage.setItem(
         "cart",
         JSON.stringify(cart)
     );
 
-
     updateCartCount();
-
     displayCart();
-
 }
 
 
@@ -426,35 +328,22 @@ function decreaseQuantity(index) {
         return;
     }
 
-
     const quantity =
         cart[index].quantity || 1;
 
-
     if (quantity > 1) {
-
-        cart[index].quantity =
-            quantity - 1;
-
-    }
-
-    else {
-
+        cart[index].quantity = quantity - 1;
+    } else {
         cart.splice(index, 1);
-
     }
-
 
     localStorage.setItem(
         "cart",
         JSON.stringify(cart)
     );
 
-
     updateCartCount();
-
     displayCart();
-
 }
 
 
@@ -465,36 +354,17 @@ function decreaseQuantity(index) {
 function showCustomerForm() {
 
     if (cart.length === 0) {
-
-        alert(
-            "Your cart is empty!"
-        );
-
+        alert("Your cart is empty!");
         return;
-
     }
-
 
     const form =
-        document.getElementById(
-            "customer-form"
-        );
-
+        document.getElementById("customer-form");
 
     if (form) {
-
-        form.style.display =
-            "block";
-
-
-        form.scrollIntoView({
-
-            behavior: "smooth"
-
-        });
-
+        form.style.display = "block";
+        form.scrollIntoView({ behavior: "smooth" });
     }
-
 }
 
 
@@ -506,72 +376,32 @@ function selectOrderType(type) {
 
     selectedOrderType = type;
 
-
     const deliveryBtn =
-        document.getElementById(
-            "delivery-btn"
-        );
-
+        document.getElementById("delivery-btn");
 
     const takeawayBtn =
-        document.getElementById(
-            "Takeaway-btn"
-        );
-
+        document.getElementById("Takeaway-btn");
 
     const addressInput =
-        document.getElementById(
-            "customer-address"
-        );
-
+        document.getElementById("customer-address");
 
     if (type === "Delivery") {
 
-        addressInput.style.display =
-            "block";
+        addressInput.style.display = "block";
+        addressInput.required = true;
 
+        deliveryBtn.classList.add("selected");
+        takeawayBtn.classList.remove("selected");
 
-        addressInput.required =
-            true;
+    } else if (type === "Takeaway") {
 
+        addressInput.style.display = "none";
+        addressInput.required = false;
+        addressInput.value = "";
 
-        deliveryBtn.classList.add(
-            "selected"
-        );
-
-
-        takeawayBtn.classList.remove(
-            "selected"
-        );
-
+        takeawayBtn.classList.add("selected");
+        deliveryBtn.classList.remove("selected");
     }
-
-
-    else if (type === "Takeaway") {
-
-        addressInput.style.display =
-            "none";
-
-
-        addressInput.required =
-            false;
-
-
-        addressInput.value =
-            "";
-
-
-        takeawayBtn.classList.add(
-            "selected"
-        );
-
-
-        deliveryBtn.classList.remove(
-            "selected"
-        );
-
-    }
-
 }
 
 
@@ -582,242 +412,98 @@ function selectOrderType(type) {
 function placeOrder() {
 
     const nameInput =
-        document.getElementById(
-            "customer-name"
-        );
-
+        document.getElementById("customer-name");
 
     const addressInput =
-        document.getElementById(
-            "customer-address"
-        );
-
+        document.getElementById("customer-address");
 
     const notesInput =
-        document.getElementById(
-            "customer-notes"
-        );
+        document.getElementById("customer-notes");
 
-
-    if (
-        !nameInput ||
-        !addressInput ||
-        !notesInput
-    ) {
-
-        alert(
-            "Customer form is missing."
-        );
-
+    if (!nameInput || !addressInput || !notesInput) {
+        alert("Customer form is missing.");
         return;
-
     }
-
-
-    // =========================
-    // CHECK ORDER TYPE
-    // =========================
 
     if (selectedOrderType === "") {
-
-        alert(
-            "Please select Delivery or Takeaway."
-        );
-
+        alert("Please select Delivery or Takeaway.");
         return;
-
     }
 
-
-    // =========================
-    // GET VALUES
-    // =========================
-
-    const name =
-        nameInput.value.trim();
-
-
-    const address =
-        addressInput.value.trim();
-
-
-    const notes =
-        notesInput.value.trim();
-
-
-    // =========================
-    // CHECK CART
-    // =========================
+    const name = nameInput.value.trim();
+    const address = addressInput.value.trim();
+    const notes = notesInput.value.trim();
 
     if (cart.length === 0) {
-
-        alert(
-            "Your cart is empty!"
-        );
-
+        alert("Your cart is empty!");
         return;
-
     }
-
-
-    // =========================
-    // NAME REQUIRED
-    // =========================
 
     if (name === "") {
-
-        alert(
-            "Please enter your name."
-        );
-
+        alert("Please enter your name.");
         return;
-
     }
 
-
-    // =========================
-    // ADDRESS REQUIRED
-    // =========================
-
-    if (
-        selectedOrderType === "Delivery" &&
-        address === ""
-    ) {
-
-        alert(
-            "Please enter your address."
-        );
-
+    if (selectedOrderType === "Delivery" && address === "") {
+        alert("Please enter your address.");
         return;
-
     }
-
-
-    // =========================
-    // TOTAL
-    // =========================
 
     let totalLL = 0;
-
-
-    // =========================
-    // WHATSAPP MESSAGE
-    // =========================
 
     let message =
         "🥐 New Order - Alkamal Croissant\n\n";
 
+    message += "Customer Information:\n";
+    message += "الاسم: " + name + "\n";
+    message += "طريقة الطلب: " + selectedOrderType + "\n";
 
-    message +=
-        "Customer Information:\n";
-
-
-    message +=
-        "الاسم: " +
-        name +
-        "\n";
-
-
-    message +=
-        "طريقة الطلب: " +
-        selectedOrderType +
-        "\n";
-
-
-    if (
-        selectedOrderType === "Delivery"
-    ) {
-
-        message +=
-            "العنوان: " +
-            address +
-            "\n";
-
+    if (selectedOrderType === "Delivery") {
+        message += "العنوان: " + address + "\n";
     }
-
 
     if (notes !== "") {
-
-        message +=
-            "الملاحظات: " +
-            notes +
-            "\n";
-
+        message += "الملاحظات: " + notes + "\n";
     }
 
-
-    message +=
-        "\n";
-
-
-    // =========================
-    // ORDER
-    // =========================
-
-    message +=
-        "Order:\n";
-
+    message += "\nOrder:\n";
 
     cart.forEach(function (item) {
 
-        const quantity =
-            item.quantity || 1;
-
-
-        const currency =
-            item.currency || "L.L";
-
+        const quantity = item.quantity || 1;
+        const currency = item.currency || "L.L";
 
         const itemTotal =
             Number(item.price) * quantity;
 
+        const itemTotalLL =
+            convertToLL(itemTotal, currency);
 
-        totalLL +=
-            convertToLL(
-                itemTotal,
-                currency
-            );
+        const itemTotalUSD =
+            itemTotalLL / USD_TO_LL;
 
+        totalLL += itemTotalLL;
 
         message +=
-            quantity +
-            " × " +
-            item.name +
-            "\n";
-
+            quantity + " × " + item.name +
+            " - " + itemTotalLL.toLocaleString() +
+            " L.L ($" + itemTotalUSD.toFixed(2) + ")\n";
     });
 
-
-    // =========================
-    // TOTAL
-    // =========================
+    const totalUSD =
+        totalLL / USD_TO_LL;
 
     message +=
-        "\nTotal: ";
-
-
-    message +=
+        "\nTotal: " +
         totalLL.toLocaleString() +
-        " L.L";
-
-
-    // =========================
-    // ENCODE
-    // =========================
+        " L.L ($" +
+        totalUSD.toFixed(2) +
+        ")";
 
     const encodedMessage =
-        encodeURIComponent(
-            message
-        );
+        encodeURIComponent(message);
 
-
-    // =========================
-    // WHATSAPP NUMBER
-    // =========================
-
-    const whatsappNumber =
-        "96181899554";
-
+    const whatsappNumber = "96181899554";
 
     const whatsappURL =
         "https://wa.me/" +
@@ -825,33 +511,13 @@ function placeOrder() {
         "?text=" +
         encodedMessage;
 
+    window.open(whatsappURL, "_blank");
 
-    // =========================
-    // OPEN WHATSAPP
-    // =========================
-
-    window.open(
-        whatsappURL,
-        "_blank"
-    );
-
-
-    // =========================
-    // CLEAR CART AFTER ORDER
-    // =========================
-
-    localStorage.removeItem(
-        "cart"
-    );
-
-
+    localStorage.removeItem("cart");
     cart = [];
 
-
     updateCartCount();
-
     displayCart();
-
 }
 
 
@@ -860,5 +526,4 @@ function placeOrder() {
 // =====================================================
 
 updateCartCount();
-
 displayCart();
