@@ -3276,3 +3276,22 @@ footer p {
         font-size: 15px;
     }
 }
+/* Back to Categories Button */
+
+.back-btn {
+    display: inline-block;
+    background-color: #6b3f20;
+    color: #fff4e3;
+    padding: 11px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #c98b4a;
+    color: white;
+}

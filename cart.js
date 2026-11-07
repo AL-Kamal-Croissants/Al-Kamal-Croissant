@@ -41,10 +41,42 @@ const USD_TO_LL = 90000;
 
 
 // =====================================================
+// CLEAN PRICE
+// =====================================================
+
+function cleanPrice(price) {
+
+    if (typeof price === "number") {
+        return price;
+    }
+
+    return Number(
+        String(price).replace(/[^0-9.-]/g, "")
+    ) || 0;
+}
+
+
+// =====================================================
+// CHECK CURRENCY
+// =====================================================
+
+function isUSD(currency) {
+
+    return (
+        currency === "$" ||
+        currency === "USD" ||
+        currency === "usd"
+    );
+}
+
+
+// =====================================================
 // ADD TO CART
 // =====================================================
 
 function addToCart(name, price, currency = "L.L") {
+
+    price = cleanPrice(price);
 
     const existingItem =
         cart.find(function (item) {
@@ -52,10 +84,12 @@ function addToCart(name, price, currency = "L.L") {
         });
 
     if (existingItem) {
+
         existingItem.quantity =
             (existingItem.quantity || 1) + 1;
-    }
-    else {
+
+    } else {
+
         cart.push({
             name: name,
             price: price,
@@ -88,6 +122,7 @@ function updateCartCount() {
         document.getElementById("cart-count");
 
     if (cartCount) {
+
         let count = 0;
 
         cart.forEach(function (item) {
@@ -106,9 +141,7 @@ function updateCartCount() {
 function showNotification(message) {
 
     const oldNotification =
-        document.querySelector(
-            ".cart-notification"
-        );
+        document.querySelector(".cart-notification");
 
     if (oldNotification) {
         oldNotification.remove();
@@ -129,6 +162,7 @@ function showNotification(message) {
     }, 10);
 
     setTimeout(function () {
+
         notification.classList.remove("show");
 
         setTimeout(function () {
@@ -145,11 +179,13 @@ function showNotification(message) {
 
 function formatPrice(price, currency) {
 
-    if (currency === "$") {
-        return "$" + Number(price).toLocaleString();
+    price = cleanPrice(price);
+
+    if (isUSD(currency)) {
+        return "$" + price.toLocaleString();
     }
 
-    return Number(price).toLocaleString() + " L.L";
+    return price.toLocaleString() + " L.L";
 }
 
 
@@ -159,11 +195,13 @@ function formatPrice(price, currency) {
 
 function convertToLL(price, currency) {
 
-    if (currency === "$") {
-        return Number(price) * USD_TO_LL;
+    price = cleanPrice(price);
+
+    if (isUSD(currency)) {
+        return price * USD_TO_LL;
     }
 
-    return Number(price);
+    return price;
 }
 
 
@@ -228,7 +266,7 @@ function displayCart() {
         const currency = item.currency || "L.L";
 
         const itemTotal =
-            Number(item.price) * quantity;
+            cleanPrice(item.price) * quantity;
 
         const itemTotalLL =
             convertToLL(itemTotal, currency);
@@ -245,6 +283,7 @@ function displayCart() {
 
         itemDiv.innerHTML = `
             <div class="cart-item-info">
+
                 <span class="cart-item-name">
                     ${item.name}
                 </span>
@@ -253,9 +292,11 @@ function displayCart() {
                     ${itemTotalLL.toLocaleString()} L.L
                     ($${itemTotalUSD.toFixed(2)})
                 </span>
+
             </div>
 
             <div class="quantity-controls">
+
                 <button
                     class="quantity-btn minus-btn"
                     onclick="decreaseQuantity(${index})">
@@ -271,6 +312,7 @@ function displayCart() {
                     onclick="increaseQuantity(${index})">
                     +
                 </button>
+
             </div>
         `;
 
@@ -289,6 +331,7 @@ function displayCart() {
         totalLL.toLocaleString() + " L.L";
 
     if (totalUSDElement) {
+
         totalUSDElement.textContent =
             "($" + totalUSD.toFixed(2) + ")";
     }
@@ -332,8 +375,11 @@ function decreaseQuantity(index) {
         cart[index].quantity || 1;
 
     if (quantity > 1) {
+
         cart[index].quantity = quantity - 1;
+
     } else {
+
         cart.splice(index, 1);
     }
 
@@ -362,8 +408,12 @@ function showCustomerForm() {
         document.getElementById("customer-form");
 
     if (form) {
+
         form.style.display = "block";
-        form.scrollIntoView({ behavior: "smooth" });
+
+        form.scrollIntoView({
+            behavior: "smooth"
+        });
     }
 }
 
@@ -474,7 +524,7 @@ function placeOrder() {
         const currency = item.currency || "L.L";
 
         const itemTotal =
-            Number(item.price) * quantity;
+            cleanPrice(item.price) * quantity;
 
         const itemTotalLL =
             convertToLL(itemTotal, currency);
@@ -514,6 +564,7 @@ function placeOrder() {
     window.open(whatsappURL, "_blank");
 
     localStorage.removeItem("cart");
+
     cart = [];
 
     updateCartCount();
